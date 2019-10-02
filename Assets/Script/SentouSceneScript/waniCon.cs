@@ -14,16 +14,26 @@ public class waniCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(atari=false)
-        GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
+        if (atari == true)
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        else 
+            GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
+            
         
-    //    GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+      
 
     }
-    public void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "tankunekoPre")
-            atari = true;
-        Debug.Log("atari");
+       
+            if (collision.gameObject.name == "TankunekoPre")
+                atari = true;
+        
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.name == "TankunekoPre")
+            atari = false;
     }
 }

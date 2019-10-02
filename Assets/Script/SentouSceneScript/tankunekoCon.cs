@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class tankunekoCon : MonoBehaviour
 {
+    public bool atari;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,19 @@ public class tankunekoCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0);
+        if(atari==true)
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        else
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 0);
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "WaniPre")
+            atari = true;
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    { 
+        if (collision.gameObject.name == "WaniPre")
+            atari = false;
     }
 }
