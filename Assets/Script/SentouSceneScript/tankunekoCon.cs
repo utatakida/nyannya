@@ -21,12 +21,12 @@ public class tankunekoCon : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "WaniPre")
+        if (collision.gameObject.name == "waniPre")
             atari = true;
     }
     public void OnTriggerExit2D(Collider2D collision)
     { 
-        if (collision.gameObject.name == "WaniPre")
+        if (collision.gameObject.name == "waniPre")
             atari = false;
     }
 }
