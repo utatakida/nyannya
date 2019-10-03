@@ -20,7 +20,7 @@ public class nekoGene : MonoBehaviour
         {
             GameObject go = Instantiate(NekoPre) as GameObject;
             go.name = NekoPre.name;
-            go.transform.position = new Vector2(6, -1.5f);
+            go.transform.position = new Vector3(6,Random.Range(-1.54f, -1.74f), Random.Range(1, 100));
 
             nekoButton.neko = false;
         }

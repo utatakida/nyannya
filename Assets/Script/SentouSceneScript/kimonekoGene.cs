@@ -20,7 +20,7 @@ public class kimonekoGene : MonoBehaviour
         {
             GameObject go = Instantiate(kimonekoPre) as GameObject;
             go.name = kimonekoPre.name;
-            go.transform.position = new Vector2(5, 0.35f);
+            go.transform.position = new Vector3(5, Random.Range(0.35f,0.45f), Random.Range(1, 100));
 
             kimonekoButton.kimoneko = false;
         }
