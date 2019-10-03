@@ -5,19 +5,24 @@ using UnityEngine;
 public class waniCon : MonoBehaviour
 {
     public bool atari=false;
-    int randamukisuu;
+    //ワニの位置を共有するためpreivateにする
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+      
+       // GetComponent<SpriteRenderer>().sortingOrder = randamu;
     }
 
     // Update is called once per frame
     void Update()
     {
+      
+
+
         if (atari == true)
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        else 
+        if(atari==false)
             GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
             
         

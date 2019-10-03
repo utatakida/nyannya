@@ -7,6 +7,8 @@ public class waniGene : MonoBehaviour
     public GameObject waniPre;
 
     float jikan;
+
+    public waniCon wanicon;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,7 @@ public class waniGene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         jikan += Time.deltaTime;
         if (jikan>3.0f) //敵ワニの出陣コード
         { 
