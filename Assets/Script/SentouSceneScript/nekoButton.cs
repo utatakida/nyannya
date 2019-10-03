@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class nekoButton : MonoBehaviour
 {
-    public static bool neko=false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +18,6 @@ public class nekoButton : MonoBehaviour
     }
     public void OnClick()
     {
-        neko = true;
-    }
-    public static bool getNeko()
-    {
-        return neko;
+
     }
 }
