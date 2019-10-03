@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/titleScene.unity
+    guid: 62f2a7d42f3938f43b72f2dd55f250e8
+  - enabled: 1
+    path: Assets/Scenes/nekokitiScene.unity
+    guid: d8651eac9c5685b40b27f502d5e5106a
+  - enabled: 1
+    path: Assets/Scenes/optionScene.unity
+    guid: e323be81b3e0c814e8d17789ffe9036b
+  - enabled: 1
+    path: Assets/Scenes/SentouScene.unity
+    guid: b6139cb41e6a9d04aa7ea21738722cf4
   m_configObjects: {}

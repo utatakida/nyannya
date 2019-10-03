@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/SentouScene.unity
+- path: Assets/Scenes/nekokitiScene.unity
   isLoaded: 1
   isActive: 1
