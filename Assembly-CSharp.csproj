@@ -63,6 +63,7 @@
     <Compile Include="Assets\Script\SentouSceneScript\hatarakinekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\kimonekoGene.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kingakuCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\nekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\nekoCon.cs" />

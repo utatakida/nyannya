@@ -5,6 +5,7 @@ using UnityEngine;
 public class waniCon : MonoBehaviour
 {
     public bool atari=false;
+    int randamukisuu;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,8 @@ public class waniCon : MonoBehaviour
             atari = true;
         if (collision.gameObject.name == "NekoAtarihantei")
             atari = true;
+        if (collision.gameObject.name == "KimonekoAtarihantei")
+            atari = true;
         
     }
     public void OnTriggerExit2D(Collider2D collision)
@@ -38,6 +41,8 @@ public class waniCon : MonoBehaviour
         if (collision.gameObject.name == "TankunekoAtarihantei")
             atari = false;
         if (collision.gameObject.name == "NekoAtarihantei")
+            atari = false;
+        if (collision.gameObject.name == "KimonekoAtarihantei")
             atari = false;
     }
   
