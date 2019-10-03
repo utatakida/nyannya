@@ -23,7 +23,8 @@ public class waniCon : MonoBehaviour
         if (atari == true)
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         if(atari==false)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(1, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0.6f, 0);
+          
             
         
       

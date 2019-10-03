@@ -7,8 +7,7 @@ public class waniGene : MonoBehaviour
     public GameObject waniPre;
 
     float jikan;
-
- 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +23,12 @@ public class waniGene : MonoBehaviour
         {
             GameObject go = Instantiate(waniPre) as GameObject;
             go.name = waniPre.name;
-            go.transform.position = new Vector2(-6, -1.2f);
+            go.transform.position = new Vector3(-6, Random.Range(-1.2f, -1.5f), Random.Range(1, 100));
 
-            jikan = 0;
+          
+
+                jikan = 0;
+           
         }
     }
 }
