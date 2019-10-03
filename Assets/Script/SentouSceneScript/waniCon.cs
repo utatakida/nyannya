@@ -26,14 +26,19 @@ public class waniCon : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
        
-            if (collision.gameObject.name == "TankunekoPre")
-                atari = true;
+        if (collision.gameObject.name == "TankunekoAtarihantei")
+            atari = true;
+        if (collision.gameObject.name == "NekoAtarihantei")
+            atari = true;
         
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.gameObject.name == "TankunekoPre")
+        if (collision.gameObject.name == "TankunekoAtarihantei")
+            atari = false;
+        if (collision.gameObject.name == "NekoAtarihantei")
             atari = false;
     }
+  
 }
