@@ -21,8 +21,12 @@ public class tankunekoCon : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+<<<<<<< HEAD
         if (collision.gameObject.name == "WaniAtarihantei")
         {
+=======
+        if (collision.gameObject.name == "waniPre")
+>>>>>>> じぶんよう
             atari = true;
             Debug.Log("ワニ当たり判定");
         }
@@ -34,7 +38,11 @@ public class tankunekoCon : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D collision)
     { 
+<<<<<<< HEAD
         if (collision.gameObject.name == "WaniAtarihantei")
+=======
+        if (collision.gameObject.name == "waniPre")
+>>>>>>> じぶんよう
             atari = false;
     }
 }
