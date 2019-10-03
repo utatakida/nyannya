@@ -8,7 +8,7 @@ public class waniGene : MonoBehaviour
 
     float jikan;
 
-    public waniCon wanicon;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +21,10 @@ public class waniGene : MonoBehaviour
 
         jikan += Time.deltaTime;
         if (jikan>3.0f) //敵ワニの出陣コード
-        { 
+        {
             GameObject go = Instantiate(waniPre) as GameObject;
             go.name = waniPre.name;
-            go.transform.position = new Vector2(-6, -1.5f);
+            go.transform.position = new Vector2(-6, -1.2f);
 
             jikan = 0;
         }
