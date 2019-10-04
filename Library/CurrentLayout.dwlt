@@ -15,9 +15,15 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 43
     width: 1920
     height: 997
+=======
+    y: 43.2
+    width: 1536
+    height: 781
+>>>>>>> 自分用
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
@@ -43,8 +49,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1920
     height: 997
+=======
+    width: 1536
+    height: 781
+>>>>>>> 自分用
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
@@ -64,7 +75,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1920
+=======
+    width: 1536
+>>>>>>> 自分用
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -85,8 +100,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 977
     width: 1920
+=======
+    y: 761
+    width: 1536
+>>>>>>> 自分用
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -111,12 +131,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1920
     height: 947
   m_MinSize: {x: 911, y: 448}
   m_MaxSize: {x: 22006, y: 10024}
   vertical: 0
   controlID: 25276
+=======
+    width: 1536
+    height: 731
+  m_MinSize: {x: 917, y: 448}
+  m_MaxSize: {x: 22012, y: 10024}
+  vertical: 0
+  controlID: 80
+>>>>>>> 自分用
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,12 +165,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 908
     height: 947
   m_MinSize: {x: 202, y: 448}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
   controlID: 25384
+=======
+    width: 550
+    height: 731
+  m_MinSize: {x: 202, y: 448}
+  m_MaxSize: {x: 4002, y: 8048}
+  vertical: 1
+  controlID: 42
+>>>>>>> 自分用
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -159,8 +197,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 908
     height: 486
+=======
+    width: 550
+    height: 380
+>>>>>>> 自分用
   m_MinSize: {x: 202, y: 224}
   m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 13}
@@ -185,9 +228,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 486
     width: 908
     height: 461
+=======
+    y: 380
+    width: 550
+    height: 351
+>>>>>>> 自分用
   m_MinSize: {x: 202, y: 224}
   m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 12}
@@ -210,6 +259,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 908
     y: 0
     width: 308
@@ -217,6 +267,15 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
+=======
+    x: 550
+    y: 0
+    width: 281
+    height: 731
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 14}
+>>>>>>> 自分用
   m_Panes:
   - {fileID: 15}
   m_Selected: 0
@@ -236,10 +295,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1216
     y: 0
     width: 275
     height: 947
+=======
+    x: 831
+    y: 0
+    width: 323
+    height: 731
+>>>>>>> 自分用
   m_MinSize: {x: 234, y: 274}
   m_MaxSize: {x: 10004, y: 10024}
   m_ActualView: {fileID: 16}
@@ -262,6 +328,7 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1491
     y: 0
     width: 429
@@ -269,6 +336,15 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
+=======
+    x: 1154
+    y: 0
+    width: 382
+    height: 731
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
+  m_ActualView: {fileID: 16}
+>>>>>>> 自分用
   m_Panes:
   - {fileID: 17}
   m_Selected: 0
@@ -295,9 +371,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 559
     width: 906
     height: 441
+=======
+    y: 453.6
+    width: 548
+    height: 331
+>>>>>>> 自分用
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -309,10 +391,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
     m_HBaseRangeMin: -377
     m_HBaseRangeMax: 377
     m_VBaseRangeMin: -212
     m_VBaseRangeMax: 212
+=======
+    m_HBaseRangeMin: -219.2
+    m_HBaseRangeMax: 219.2
+    m_VBaseRangeMin: -123.200005
+    m_VBaseRangeMax: 123.200005
+>>>>>>> 自分用
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -330,25 +419,43 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
+<<<<<<< HEAD
       width: 906
       height: 424
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 453, y: 212}
+=======
+      width: 548
+      height: 314
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 274, y: 157}
+>>>>>>> 自分用
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -453
       y: -212
       width: 906
       height: 424
+=======
+      x: -274
+      y: -157
+      width: 548
+      height: 314
+>>>>>>> 自分用
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
+<<<<<<< HEAD
   m_LastWindowPixelSize: {x: 906, y: 441}
+=======
+  m_LastWindowPixelSize: {x: 685, y: 413.75}
+>>>>>>> 自分用
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -375,9 +482,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 73
     width: 906
     height: 466
+=======
+    y: 73.6
+    width: 548
+    height: 360
+>>>>>>> 自分用
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 927bc7f8a89ddf74388686bb82839121
   m_SceneLighting: 1
@@ -385,9 +498,15 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: -0.27834478, y: -0.7894389, z: 0.0546875}
     speed: 2
     m_Value: {x: -0.27834478, y: -0.7894389, z: 0.0546875}
+=======
+    m_Target: {x: 261.8595, y: 135.3804, z: -0.11248454}
+    speed: 2
+    m_Value: {x: 261.8595, y: 135.3804, z: -0.11248454}
+>>>>>>> 自分用
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -419,9 +538,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 14.536272
     speed: 2
     m_Value: 14.536272
+=======
+    m_Target: 299.7695
+    speed: 2
+    m_Value: 299.7695
+>>>>>>> 自分用
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -535,17 +660,30 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 908
     y: 73
     width: 304
     height: 927
+=======
+    x: 550.4
+    y: 73.6
+    width: 277
+    height: 711
+>>>>>>> 自分用
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 3c230000
       m_LastClickedID: 0
       m_ExpandedIDs: da4afffff063ffffb4fbffff382a0000582a0000702a0000962a0000
+=======
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 4ef3ffff90f3ffffbcf3ffffc4faffffdafafffffefaffffd6fbffff
+>>>>>>> 自分用
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -590,10 +728,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1216
     y: 73
     width: 271
     height: 927
+=======
+    x: 831.2
+    y: 73.6
+    width: 319
+    height: 711
+>>>>>>> 自分用
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -607,20 +752,35 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Script/SentouSceneScript
   m_ViewMode: 1
+=======
+    - Assets/Scenes
+  m_ViewMode: 0
+>>>>>>> 自分用
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Script/SentouSceneScript
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
   m_LastProjectPath: "F:\\\u30C9\u30AD\u30E5\u30E1\u30F3\u30C8\\\u65B0\u3057\u3044\u306B\u3083\u3093\u3053"
+=======
+  m_LastProjectPath: C:\Users\user\Documents\nyannya
+>>>>>>> 自分用
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: a2290000
     m_LastClickedID: 10658
     m_ExpandedIDs: 000000005e260000f8260000162900004e29000092290000a229000000ca9a3b
+=======
+    m_SelectedIDs: 10290000
+    m_LastClickedID: 10512
+    m_ExpandedIDs: 0000000090090000e6090000f80900001c0a0000460a0000a00a00006e0b0000aa0b0000
+>>>>>>> 自分用
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -648,7 +808,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000005e260000f8260000162900004e29000092290000a229000000ca9a3b
+=======
+    m_ExpandedIDs: ffffffff0000000090090000e6090000f80900001c0a0000460a0000a00a00006e0b0000aa0b0000
+>>>>>>> 自分用
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -724,10 +888,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1491
     y: 73
     width: 427
     height: 927
+=======
+    x: 1154.4
+    y: 73.6
+    width: 380
+    height: 711
+>>>>>>> 自分用
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /[Ll]ibrary/
+=======
+ /[Ll]ibrary/
+>>>>>>> 自分用
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -27,4 +31,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+<<<<<<< HEAD
 .vs/新しいにゃんこ/v15/Server/sqlite3/db.lock
+=======
+.vs/nyannya/v15/Server/sqlite3/db.lock
+>>>>>>> 自分用
