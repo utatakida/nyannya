@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5853d7c2b98a98f46a16d99db7b17c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wani: 700
+  wanijikan: 0
   atari: 0
 --- !u!50 &2269864316082851460
 Rigidbody2D:

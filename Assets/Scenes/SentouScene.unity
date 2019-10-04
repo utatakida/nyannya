@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e476c3598525b3b4cbe1cbcf6b6cab6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankunekoPre: {fileID: 2717853209229923181, guid: 11fc195a4b45ef04296fd3e1cab58e3b,
+  tankunekoPre: {fileID: 8190689391374288139, guid: dff5381d2ffb7af4abfb264610ba7a71,
     type: 3}
 --- !u!4 &1015059359
 Transform:
