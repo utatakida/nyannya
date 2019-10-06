@@ -18,11 +18,15 @@ public class kimonekoButton : MonoBehaviour
     }
     public void OnClick()
     {
-        kimoneko = true;
-        
+        if (kingakuCon.kingaku >= kingakuCon.kimoneko)
+        {
+
+            kimoneko = true;
+
+            kingakuCon.kingaku -= kingakuCon.kimoneko;
+
+        }
+
     }
-    public static bool getKimoneko()
-    {
-        return kimoneko;
-    }
+   
 }

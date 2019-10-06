@@ -18,10 +18,14 @@ public class tankunekoButton : MonoBehaviour
     }
     public void OnClick()
     {
-        tankuneko = true;
+        if (kingakuCon.kingaku >= kingakuCon.kabekin)
+        {
+
+            tankuneko = true;
+
+            kingakuCon.kingaku -= kingakuCon.kabekin;
+
+        }
     }
-    public static bool getTankuneko()
-    {
-        return tankuneko;
-    }
+   
 }

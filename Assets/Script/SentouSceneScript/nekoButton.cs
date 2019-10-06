@@ -18,10 +18,16 @@ public class nekoButton : MonoBehaviour
     }
     public void OnClick()
     {
-        neko = true;
+        if (kingakuCon.kingaku >= kingakuCon.nekokin)
+        {
+
+            neko = true;
+
+            kingakuCon.kingaku -= kingakuCon.nekokin;
+
+            
+
+        }
     }
-    public static bool getNeko()
-    {
-        return neko;
-    }
+   
 }

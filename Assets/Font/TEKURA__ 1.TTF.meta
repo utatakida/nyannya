@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a97633a2cd5cbac44b36645529d307c9
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TekutekuRoundAl
+  fontNames:
+  - TekutekuRoundAl
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 667f543c2ba9a9843b64babbe5052f49, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

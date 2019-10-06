@@ -21,7 +21,7 @@ public class tankunekoGene : MonoBehaviour
         {
             GameObject go = Instantiate(tankunekoPre) as GameObject;
             go.name = tankunekoPre.name;
-            go.transform.position = new Vector2(6, -1);
+            go.transform.position = new Vector3(6, Random.Range(-1f, -1.2f), Random.Range(1, 100));
 
             tankunekoButton.tankuneko = false;
         }
