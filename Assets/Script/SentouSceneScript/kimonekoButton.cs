@@ -24,6 +24,7 @@ public class kimonekoButton : MonoBehaviour
             kimoneko = true;
 
             kingakuCon.kingaku -= kingakuCon.kimoneko;
+            seisan.kimonekohan = true;
 
         }
 

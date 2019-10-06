@@ -25,6 +25,8 @@ public class tankunekoButton : MonoBehaviour
 
             kingakuCon.kingaku -= kingakuCon.kabekin;
 
+            seisan.kabenekohan = true;
+
         }
     }
    

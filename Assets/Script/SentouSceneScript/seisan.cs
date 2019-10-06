@@ -5,50 +5,61 @@ using UnityEngine.UI;
 
 public class seisan : MonoBehaviour
 {
-    public static bool seisanhantei = false;//ノーマル猫生産判定     
-    public GameObject Saiseisan;//青ゲージをオブジェクトとして取得する
-   // public GameObject blackSaiseisan;//黒ゲージをオブジェクトとして取得する
+    public static bool seisanhantei = false;//ノーマル猫生産判定    
+    public static bool kanryou = false;
 
-    float Max=0.023f;//1秒を１時間としたノーマル猫の再生産時間
+    public static bool kabenekohan = false;//かべねこ生産判定    
+    public static bool kabekanryou = false;
 
-   float seiTime = 0;
-    
+    public static bool kimonekohan = false;//きもねこ生産判定 
+    public static bool kimokanryou = false;
 
-    // Start is called before the first frame update
+
+    public Image UIobj;
+
+    public float nekocountTime = 3.0f;//ノーマル猫生産時間
+
+    public float kabecountTime = 3.0f;//かべねこ生産時間
+
+    public float kimocountTime = 3.0f;//きもねこ生産時間
+
+    //ゲージ
+    [SerializeField]
+    private GameObject Blue;
+    [SerializeField]
+    private GameObject Black;
+
+
+    public AudioClip mantan;//ゲージが満タンになったときの音
+
+    public AudioSource SE;
+
     void Start()
     {
-        this.Saiseisan = GameObject.Find("青ゲージ");
-       // Saiseisan.SetActive(false);
-       // blackSaiseisan.SetActive(false);
+        Blue.SetActive(false);
+        Black.SetActive(false);
     }
 
-   // public void seiseiTime()
-   // {
-//
-        //ImageというコンポーネントのfillAmountを取得して操作する
-       // Saiseisan.GetComponent<Image>().fillAmount =Time.time;
-   // }
-
-
-    // Update is called once per frame
+  
     void FixedUpdate()
     {
-
-        seiTime += 0.001f;
-        Saiseisan.GetComponent<Image>().fillAmount = seiTime;
         //ノーマル猫の処理
         if (seisanhantei == true)
         {
-           // Saiseisan.SetActive(true);
-           // blackSaiseisan.SetActive(true);
-
-            Saiseisan.GetComponent<Image>().fillAmount = seiTime;
-            if (seiTime == Max)
+            kanryou = false;
+            Blue.SetActive(true);
+            Black.SetActive(true);
+            UIobj.fillAmount += 1.0f / nekocountTime * Time.deltaTime;
+            if (UIobj.fillAmount == 1)
             {
+                SE.PlayOneShot(mantan);
+                UIobj.fillAmount = 0;
                 seisanhantei = false;
-                seiTime = 0;
-                //Saiseisan.SetActive(false);
-               // blackSaiseisan.SetActive(false);
+                Blue.SetActive(false);
+                Black.SetActive(false);
+
+                kanryou = true;
+
             }
         }
     }
