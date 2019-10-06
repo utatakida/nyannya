@@ -4,49 +4,56 @@ using UnityEngine;
 
 public class waniCon : MonoBehaviour
 {
+    //ワニのHP
+    public int wani=1000;
+
+    //ワニの攻撃力
+    int kougekiryoku=100;
     
-
-    public int wani=700;
-
-
-    //  ワニの攻撃時間を設定
-    public bool wanijikan;
-    
-    float jikan;
-    float kougekijikan;
-
+    //ワニの攻撃範囲
     public bool atari=false;
+
+    //ワニの移動速度
+    float sokudo = 0.6f;
+
+    //ワニの攻撃時間
+    float kougekijikan=1;
+    float jikan;
+    bool kougeki;
+
     
    
     // Start is called before the first frame update
     void Start()
     {
-
-        jikan = 0;
-        kougekijikan = 2;
+      
+        jikan =0;        //現在の時間
+        kougeki=false;//ワニが攻撃可能になるとtrue
     }
 
     // Update is called once per frame
     void Update()
     {
+        //ワニのHPがなくなると消去
         if (wani < 0)
         {
             Destroy(gameObject);
         }
-       jikan += Time.deltaTime;
+
+        //ワニの攻撃時間を設定
+        jikan += Time.deltaTime;
         if (jikan > kougekijikan)
         {
-            wanijikan = true;
+            kougeki = true;
             jikan = 0;
         }
-        else
-            wanijikan = false;
+      
 
 
         if (atari == true)
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         if(atari==false)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0.6f, 0);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(sokudo, 0);
           
             
         
@@ -55,18 +62,53 @@ public class waniCon : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
-       
-        if (collision.gameObject.name == "TankunekoAtarihantei")
-            atari = true;
-        if (collision.gameObject.name == "NekoAtarihantei")
+        //にゃんこ城当たり判定
+        if (collision.gameObject.name == "nyankojyou")
         {
             atari = true;
-            collision.transform.root.gameObject.GetComponent<nekoCon>().neko -= 700;
+
+            if (kougeki == true)
+            {
+                collision.transform.root.gameObject.GetComponent<nyankojyouCon>().nyankojyou -= kougekiryoku;
+                kougeki = false;
+            }
         }
-        if (collision.gameObject.name == "KimonekoAtarihantei")
+        //タンク猫の当たり判定
+        if (collision.gameObject.name == "TankunekoAtarihantei")
+        {
+
             atari = true;
+            if (kougeki == true)
+            {
+                collision.transform.root.gameObject.GetComponent<tankunekoCon>().tankuneko -= kougekiryoku;
+                kougeki = false;
+            }
+
+        }
+        //猫の当たり判定
+        if (collision.gameObject.name == "NekoAtarihantei")
+        {
+
+            atari = true;
+            if (kougeki == true)
+            {
+                collision.transform.root.gameObject.GetComponent<nekoCon>().neko -= kougekiryoku;
+                kougeki = false;
+            }
+        }
+        //きもねこの当たり判定
+        if (collision.gameObject.name == "KimonekoAtarihantei")
+        {
+            atari = true;
+            if (kougeki == true)
+            {
+                collision.transform.root.gameObject.GetComponent<kimonekoCon>().kimoneko -= kougekiryoku;
+                kougeki = false;
+            }
+        }
         
     }
+
     public void OnTriggerExit2D(Collider2D collision)
     {
 
@@ -77,5 +119,5 @@ public class waniCon : MonoBehaviour
         if (collision.gameObject.name == "KimonekoAtarihantei")
             atari = false;
     }
-  
+
 }

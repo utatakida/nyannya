@@ -12,6 +12,7 @@ public class waniGene : MonoBehaviour
     void Start()
     {
         jikan = 0;
+   
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class waniGene : MonoBehaviour
     {
 
         jikan += Time.deltaTime;
-        if (jikan>3.0f) //敵ワニの出陣コード
+        if (jikan>3f) //敵ワニの出陣コード
         {
             GameObject go = Instantiate(waniPre) as GameObject;
             go.name = waniPre.name;
