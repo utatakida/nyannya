@@ -6,6 +6,9 @@ public class tankunekoGene : MonoBehaviour
 {
     bool tankuneko;
     public GameObject tankunekoPre;
+
+    int randamu;
+    float syousuu=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +22,25 @@ public class tankunekoGene : MonoBehaviour
 
         if (tankuneko == true)//タンク猫の出撃コード
         {
+            //タンク猫の位置とレイヤーを合わせる
+            randamu = Random.Range(1, 5);
+            for (int i = 1; i <= 4; i++)
+            {
+                if (randamu == i)
+                {
+
+                    for (int j = 1; j <= i; j++)
+                    {
+                        syousuu += -0.17f;
+                    }
+                }
+            }
+
             GameObject go = Instantiate(tankunekoPre) as GameObject;
             go.name = tankunekoPre.name;
-            go.transform.position = new Vector3(6, Random.Range(-1f, -1.2f), Random.Range(1, 100));
+            go.transform.position = new Vector2(6, -1+syousuu);
+            go.transform.GetComponent<SpriteRenderer>().sortingOrder = randamu;
+            syousuu = 0;
 
             tankunekoButton.tankuneko = false;
         }
