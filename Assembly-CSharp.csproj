@@ -75,11 +75,14 @@
     <Compile Include="Assets\Script\SentouSceneScript\tankunekoGene.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\waniCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\waniGene.cs" />
+    <Compile Include="Assets\Script\tittle&amp;option.script\Audio.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\backButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\batuButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\kaisiButtonCon.cs" />
+    <Compile Include="Assets\Script\tittle&amp;option.script\noButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\oputionButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\startButtonCon.cs" />
+    <Compile Include="Assets\Script\tittle&amp;option.script\yesButtonCon.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/user/Documents/nyannya/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

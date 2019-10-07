@@ -8,7 +8,7 @@ public class backButtonCon : MonoBehaviour
 
     public void OnClick()
     {
-        SceneManager.LoadScene("titleScene");
+        SceneManager.LoadScene("sentakuScene");
     }
     // Start is called before the first frame update
     void Start()
