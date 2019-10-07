@@ -36,7 +36,7 @@ public class waniGene : MonoBehaviour
                    
                     for (int j = 1; j <= i; j++)
                     {
-                        syousuu += -0.1f;
+                        syousuu += -0.17f;
                     }
                 }
             }
@@ -44,7 +44,7 @@ public class waniGene : MonoBehaviour
             GameObject go = Instantiate(waniPre) as GameObject;
             go.name = waniPre.name;
             go.transform.GetComponent<SpriteRenderer>().sortingOrder = randamu;
-            go.transform.position = new Vector3(-6,-1.0f+syousuu,0);
+            go.transform.position = new Vector3(-6,-1.1f+syousuu,0);
             jikan = 0;
             syousuu = 0;
            
