@@ -7,28 +7,46 @@ public class waniGene : MonoBehaviour
     public GameObject waniPre;
 
     float jikan;
+
+    //ワニの出現位置とレイヤーを合わせる
+    int randamu;
+    float syousuu=0;
    
     // Start is called before the first frame update
     void Start()
     {
         jikan = 0;
-   
     }
 
     // Update is called once per frame
     void Update()
     {
+       
 
         jikan += Time.deltaTime;
-        if (jikan>3f) //敵ワニの出陣コード
+        //ワニの出陣コード
+        if (jikan>3f)
         {
+            //ワニの位置とレイヤーを合わせる
+            randamu = Random.Range(1, 5);
+            for (int i = 1; i <= 4; i++)
+            {
+                if (randamu == i)
+                {
+                   
+                    for (int j = 1; j <= i; j++)
+                    {
+                        syousuu += -0.1f;
+                    }
+                }
+            }
+
             GameObject go = Instantiate(waniPre) as GameObject;
             go.name = waniPre.name;
-            go.transform.position = new Vector3(-6, Random.Range(-1.2f, -1.5f), Random.Range(1, 100));
-
-          
-
-                jikan = 0;
+            go.transform.GetComponent<SpriteRenderer>().sortingOrder = randamu;
+            go.transform.position = new Vector3(-6,-1.0f+syousuu,0);
+            jikan = 0;
+            syousuu = 0;
            
         }
     }

@@ -20,6 +20,17 @@ public class kimonekoCon : MonoBehaviour
     float kougekijikan = 1;
     float jikan;
     bool kougeki;
+
+
+    //きもねこのノックバック
+    bool nockback = false;
+    int kaisuu = 2;
+    float nockbackjikan = 0.75f;
+    int nockbacktairyoku = 500;
+
+    //きもねこの消去
+    bool kimonekonosyoukyo = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +42,26 @@ public class kimonekoCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ノックバックを設定
+        if (kimoneko < nockbacktairyoku && kaisuu % 2 == 0)
+        {
+            nockback = true;
+            kaisuu += 1;
+        }
+        if (nockback == true)
+        {
+            if (nockbackjikan > 0)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right * 80);
+            }
+            nockbackjikan -= Time.deltaTime;
+            if (nockbackjikan < 0)
+            {
+                nockbackjikan = 0.75f;
+                nockback = false;
+            }
+        }
+
         //きもねこの攻撃時間を設定
         jikan += Time.deltaTime;
         if (jikan > kougekijikan)
@@ -42,9 +73,11 @@ public class kimonekoCon : MonoBehaviour
         //きもねこを消去
         if (kimoneko < 0)
         {
-            Destroy(gameObject);
+            nockback = true;
+            kimonekonosyoukyo = true;
         }
 
+        //きもねこの移動
         if (atari == false)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-sokudo, 0);

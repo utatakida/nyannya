@@ -21,8 +21,15 @@ public class waniCon : MonoBehaviour
     float jikan;
     bool kougeki;
 
-    
-   
+    //ワニのノックバック
+    bool nockback = false;
+    int kaisuu = 2;
+    float nockbackjikan = 0.75f;
+    int nockbacktairyoku = 500;
+
+    //ワニの消去
+    bool wanisyoukyo = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +41,32 @@ public class waniCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ノックバックを設定
+        if (wani < nockbacktairyoku && kaisuu % 2 == 0)
+        {
+            nockback = true;
+            kaisuu += 1;
+        }
+        if (nockback == true)
+        {
+            if (nockbackjikan > 0)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.right *- 80);
+            }
+            nockbackjikan -= Time.deltaTime;
+            if (nockbackjikan < 0)
+            {
+                nockbackjikan = 0.75f;
+                nockback = false;
+                if (wanisyoukyo == true)
+                    Destroy(gameObject);
+            }
+        }
         //ワニのHPがなくなると消去
         if (wani < 0)
         {
-            Destroy(gameObject);
+            nockback = true;
+            wanisyoukyo = true;
         }
 
         //ワニの攻撃時間を設定
