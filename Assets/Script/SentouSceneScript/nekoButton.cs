@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class nekoButton : MonoBehaviour
 {
@@ -11,6 +12,20 @@ public class nekoButton : MonoBehaviour
 
     bool kanryouhan = true;//生産完了をみるためのもの
 
+    public static bool nomaruseisanhantei = false;//ノーマル猫生産判定    
+    public static bool nomarukanryou = false;
+
+    
+  public  Image UIobj;
+
+
+
+    //ゲージ
+    [SerializeField]
+    private GameObject Blue;
+    [SerializeField]
+    private GameObject Black;
+
     [SerializeField]
     private GameObject kingaku;//金額テキスト
     [SerializeField]
@@ -20,25 +35,52 @@ public class nekoButton : MonoBehaviour
     public AudioClip denaitoki;//キャラが出ないときの音
     public AudioClip mantan;//ゲージが満タンになったときの音
 
+
     public AudioSource SE;
 
-    
+    public static  float nekocountTime = 2.0f;//ノーマル猫生産時間
 
     void Start()
     {
+       
         saiseisan.SetActive(false);
+
+        Blue.SetActive(false);
+        Black.SetActive(false);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(seisan.kanryou==true)
+        //ノーマル猫の処理
+        if (nomaruseisanhantei == true)
+        {
+            nomarukanryou = false;
+
+            UIobj.fillAmount += 1.0f / nekocountTime * Time.deltaTime;
+            if (UIobj.fillAmount == 1)
+            {
+                SE.PlayOneShot(mantan);
+                UIobj.fillAmount = 0;
+                nomaruseisanhantei = false;
+
+
+                nomarukanryou = true;
+
+            }
+        }
+
+
+        if (nomarukanryou==true)
         {
             saiseisan.SetActive(false);
             kanryouhan = true;
             kingaku.SetActive(true);
             kingaku2.SetActive(true);
-         
+
+            Blue.SetActive(false);
+            Black.SetActive(false);
+
         }
     }
 
@@ -56,12 +98,15 @@ public class nekoButton : MonoBehaviour
 
             saiseisan.SetActive(true);
 
-            seisan.seisanhantei = true;
+            nomaruseisanhantei = true;
 
             kanryouhan = false;
 
             kingaku.SetActive(false);
             kingaku2.SetActive(false);
+
+            Blue.SetActive(true);
+            Black.SetActive(true);
 
 
         }
