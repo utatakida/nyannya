@@ -5,18 +5,27 @@ using TMPro;
 
 public class hatarakinekoButton : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject saiseisan;//再生産までの時間暗くするパネル
+
+
+    private Animator animator;
+
+    public AudioClip derutoki;//キャラが出るときの音
+    public AudioClip denaitoki;//キャラが出ないときの音
+
+    public AudioSource SE;
+
 
     int kaihoukin = 160;//解放時に働き猫の値段を上げる
 
-    public int Lebel;//上限のレベル
+    int kaihouzyou = 160;//上がる量
+
+    public int Lebel=1;//上限のレベル
 
     int zyoukin = 300;//解放時に上がる金額量
 
-    public int kaisuu;//上限解放の数をここで決める
+     int kaisuu=8;//上限解放の数をここで決める
 
-    public static  int hatarakin = 150;//働き猫の初期金額
+   
 
     //解放時の判定
     public static bool kaihou = false;
@@ -24,8 +33,11 @@ public class hatarakinekoButton : MonoBehaviour
     //解放時のテキストレベル
    public  GameObject LEVEL;
 
+    public GameObject MAX;
+
     //解放時の金額表示オブジェクト
-     public GameObject kingakuText1;
+    public GameObject kingakuText1;
+
 
 
     // Start is called before the first frame update
@@ -33,42 +45,61 @@ public class hatarakinekoButton : MonoBehaviour
     {
         this.kingakuText1 = GameObject.Find("kingaku");
         this.LEVEL = GameObject.Find("LEVEL");
-        saiseisan.SetActive(true);
+        this.MAX = GameObject.Find("MAX");
+        MAX.SetActive(false);
 
 
-      
+        animator = GetComponent<Animator>();
+
+
     }
 
     // Update is called once per frame
-    void FixdUpdate()
+    void FixedUpdate()
     {
-        this.kingakuText1.GetComponent<TextMeshProUGUI>().text = hatarakin + "";//現在の金額を表示
-        this.LEVEL.GetComponent<TextMeshProUGUI>().text = Lebel + "";//現在レベルを表示
+        this.kingakuText1.GetComponent<TextMeshProUGUI>().text = kaihoukin+"";//現在の金額を表示
+        this.LEVEL.GetComponent<TextMeshProUGUI>().text = "LEVEL " + Lebel;//現在レベルを表示
 
-        if(hatarakin>=kingakuCon.kingaku)
+        if (kingakuCon.kingaku >= kaihoukin)
         {
-            saiseisan.SetActive(true);
-
+            animator.SetBool("ON", true);
+        }else
+        {
+            animator.SetBool("ON", false);
         }
     }
+
+
     public void OnClick()
     {
-        if(kingakuCon.kingaku >= hatarakin)
+        if(kingakuCon.kingaku >= kaihoukin&&Lebel < kaisuu)
         {
-            saiseisan.SetActive(false);
 
-            kingakuCon.kingaku -= hatarakin;
-           kaihou = true;
-            //上限解放処理
-            if (kaihou = true)
-            {
-                kingakuCon.saidai += zyoukin;
-                Lebel++;
-                hatarakin += kaihoukin;
-                this.kingakuText1.GetComponent<TextMeshProUGUI>().text = hatarakin + "";//現在の金額を表示
-                this.LEVEL.GetComponent<TextMeshProUGUI>().text = Lebel + "";//現在レベルを表示
-            }
+            SE.PlayOneShot(derutoki);
 
+            Lebel++;
+
+            kingakuCon.kingaku -= kaihoukin;
+
+            kingakuCon.saidai += zyoukin;
+
+            kaihou = true;
+
+            kaihoukin += kaihouzyou;
+          
+            this.kingakuText1.GetComponent<TextMeshProUGUI>().text = kaihoukin + "";//現在の金額を表示
+            this.LEVEL.GetComponent<TextMeshProUGUI>().text = "LEVEL " + Lebel ;//現在レベルを表示
+          
+
+        }
+        else SE.PlayOneShot(denaitoki);
+
+        if (Lebel ==kaisuu)
+        {
+            animator.SetBool("MAX", true);
+            MAX.SetActive(true);
+           kingakuText1.SetActive(false);
+            this.MAX.GetComponent<TextMeshProUGUI>().text = "MAX";//現在レベルを表示
         }
         
     }

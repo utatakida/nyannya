@@ -39,7 +39,7 @@ public class tankunekoButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        saiseisan.SetActive(false);
+        saiseisan.SetActive(true);
         Blue.SetActive(false);
         Black.SetActive(false);
     }
@@ -77,6 +77,12 @@ public class tankunekoButton : MonoBehaviour
             Black.SetActive(false);
 
         }
+
+        if (kingakuCon.kingaku >= kingakuCon.kabekin && kanryouhan == true)
+        {
+            saiseisan.SetActive(false);
+        }
+
     }
     public void OnClick()
     {

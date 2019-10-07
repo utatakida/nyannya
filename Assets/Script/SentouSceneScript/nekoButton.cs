@@ -43,7 +43,7 @@ public class nekoButton : MonoBehaviour
     void Start()
     {
        
-        saiseisan.SetActive(false);
+        saiseisan.SetActive(true);
 
         Blue.SetActive(false);
         Black.SetActive(false);
@@ -82,6 +82,12 @@ public class nekoButton : MonoBehaviour
             Black.SetActive(false);
 
         }
+
+        if (kingakuCon.kingaku >= kingakuCon.nekokin &&kanryouhan == true)
+        {
+            saiseisan.SetActive(false);
+        }else saiseisan.SetActive(true);
+
     }
 
 
