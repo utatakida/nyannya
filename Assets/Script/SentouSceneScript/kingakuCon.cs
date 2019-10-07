@@ -9,7 +9,11 @@ public class kingakuCon : MonoBehaviour
 {
     GameObject kingakuText;
     public static float kingaku;//現在の金額
-    int saidai;//金額の最大値
+
+    
+   
+
+    public static int saidai;//金額の最大値
 
     public static int nekokin = 75;//ねこの値段
 
@@ -19,9 +23,6 @@ public class kingakuCon : MonoBehaviour
     public static int kimoneko = 600;//きもねこの値段
 
 
-    int jyougen; //上限解放
-    int kaisuu;//上限解放の数をここで決める
-    bool j;//解放スクリプトの値をこいつに代入
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,8 @@ public class kingakuCon : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+
         //金額の骨組み
         if (kingaku < saidai - 0.1f)//金額の最大値がsaidaiの値
             kingaku += Time.deltaTime * 50 + 0.5f;//1秒間に100円ずつ増える
