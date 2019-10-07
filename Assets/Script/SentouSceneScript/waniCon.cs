@@ -8,7 +8,7 @@ public class waniCon : MonoBehaviour
     public int wani=1000;
 
     //ワニの攻撃力
-    int kougekiryoku=100;
+    int kougekiryoku=500;
     
     //ワニの攻撃範囲
     public bool atari=false;
@@ -41,6 +41,7 @@ public class waniCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //ノックバックを設定
         if (wani < nockbacktairyoku && kaisuu % 2 == 0)
         {
@@ -62,6 +63,7 @@ public class waniCon : MonoBehaviour
                     Destroy(gameObject);
             }
         }
+       
         //ワニのHPがなくなると消去
         if (wani < 0)
         {

@@ -38,7 +38,7 @@ public class kimonekoGene : MonoBehaviour
 
             GameObject go = Instantiate(kimonekoPre) as GameObject;
             go.name = kimonekoPre.name;
-            go.transform.position = new Vector2(5f,0.15f+syousuu);
+            go.transform.position = new Vector2(5f,0.12f+syousuu);
             go.transform.GetComponent<SpriteRenderer>().sortingOrder = randamu;
             syousuu = 0;
             kimonekoButton.kimoneko = false;

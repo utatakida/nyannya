@@ -23,5 +23,7 @@ public class syatihokoCon : MonoBehaviour
         }
         //しゃちほこの体力を表示
         syatihokotairyoku.GetComponent<Text>().text = syatihoko + "/" + "5000";
+
+
     }
 }

@@ -39,11 +39,7 @@ public class nekoGene : MonoBehaviour
 
             GameObject go = Instantiate(NekoPre) as GameObject;
             go.name = NekoPre.name;//猫の名前を変更
-            go.transform.GetComponent<SpriteRenderer>().sortingOrder = randamu;//レイヤーを変更
-            Debug.Log(randamu);
-            Debug.Log(-1.6f+syousuu);
-            
-            
+            go.transform.GetComponent<SpriteRenderer>().sortingOrder = randamu;//レイヤーを変更         
             go.transform.position = new Vector3(6,-1.57f+syousuu,0);//猫の出現位置を変更
             syousuu = 0;
 

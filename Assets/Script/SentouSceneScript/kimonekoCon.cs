@@ -29,7 +29,7 @@ public class kimonekoCon : MonoBehaviour
     int nockbacktairyoku = 500;
 
     //きもねこの消去
-    bool kimonekonosyoukyo = false;
+    bool kimonekosyoukyo = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +59,8 @@ public class kimonekoCon : MonoBehaviour
             {
                 nockbackjikan = 0.75f;
                 nockback = false;
+                if (kimonekosyoukyo == true)
+                    Destroy(gameObject);
             }
         }
 
@@ -74,7 +76,7 @@ public class kimonekoCon : MonoBehaviour
         if (kimoneko < 0)
         {
             nockback = true;
-            kimonekonosyoukyo = true;
+            kimonekosyoukyo = true;
         }
 
         //きもねこの移動
