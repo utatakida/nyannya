@@ -93,6 +93,7 @@ public class nekoCon : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
+        //敵城当たり判定
         if (collision.gameObject.name == "syatihoko")
         {
             atari = true;
@@ -109,6 +110,16 @@ public class nekoCon : MonoBehaviour
             if (kougeki == true)
             {
                 collision.transform.root.gameObject.GetComponent<waniCon>().wani -= kougekiryoku;
+                kougeki = false;
+            }
+        }
+        //アザラシ当たり判定
+        if (collision.gameObject.name == "AzarasiAtarihantei")
+        {
+            atari = true;
+            if (kougeki == true)
+            {
+                collision.transform.root.gameObject.GetComponent<azarasiCon>().azarasi -= kougekiryoku;
                 kougeki = false;
             }
         }

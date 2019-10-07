@@ -91,6 +91,7 @@ public class kimonekoCon : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
+        //敵城への攻撃判定
         if (collision.gameObject.name == "syatihoko")
         {
             atari = true;
@@ -100,12 +101,23 @@ public class kimonekoCon : MonoBehaviour
                 kougeki = false;
             }
         }
+        //ワニへの攻撃判定
         if (collision.gameObject.name == "WaniAtarihantei")
         {
             atari = true;
             if (kougeki == true)
             {
                 collision.transform.root.gameObject.GetComponent<waniCon>().wani -= kougekiryoku;
+                kougeki = false;
+            }
+        }
+        //アザラシへの攻撃判定
+        if (collision.gameObject.name == "AzarasiAtarihantei")
+        {
+            atari = true;
+            if (kougeki == true)
+            {
+                collision.transform.root.gameObject.GetComponent<azarasiCon>().azarasi-= kougekiryoku;
                 kougeki = false;
             }
         }
