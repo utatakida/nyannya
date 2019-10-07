@@ -67,6 +67,11 @@ public class nekoButton : MonoBehaviour
 
                 nomarukanryou = true;
 
+                if (kingakuCon.kingaku >= kingakuCon.nekokin)
+                {
+                    saiseisan.SetActive(true);
+                }
+
             }
         }
 

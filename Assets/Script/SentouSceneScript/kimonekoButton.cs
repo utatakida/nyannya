@@ -63,6 +63,11 @@ public class kimonekoButton : MonoBehaviour
 
                 nomarukimokanryou = true;
 
+                if (kingakuCon.kingaku >= kingakuCon.kimoneko)
+                {
+                    saiseisan.SetActive(true);
+                }
+
             }
         }
 
@@ -83,6 +88,7 @@ public class kimonekoButton : MonoBehaviour
         {
             saiseisan.SetActive(false);
         }
+        else saiseisan.SetActive(true);
 
     }
     public void OnClick()

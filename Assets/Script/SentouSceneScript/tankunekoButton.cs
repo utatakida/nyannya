@@ -78,10 +78,12 @@ public class tankunekoButton : MonoBehaviour
 
         }
 
+
         if (kingakuCon.kingaku >= kingakuCon.kabekin && kanryouhan == true)
         {
             saiseisan.SetActive(false);
         }
+        else saiseisan.SetActive(true);
 
     }
     public void OnClick()
