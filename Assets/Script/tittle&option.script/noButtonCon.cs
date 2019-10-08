@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class backButtonCon : MonoBehaviour
+public class noButtonCon : MonoBehaviour
 {
 
     public void OnClick()
     {
-        SceneManager.LoadScene("sentakuScene");
+        SceneManager.LoadScene("nekokitiScene");
     }
     // Start is called before the first frame update
     void Start()
