@@ -25,7 +25,7 @@ public class waniGene : MonoBehaviour
 
         jikan += Time.deltaTime;
         //ワニの出陣コード
-        if (jikan>234567f)
+        if (jikan>111113f&&syatihokoCon.win==false)
         {
             //ワニの位置とレイヤーを合わせる
             randamu = Random.Range(1, 5);

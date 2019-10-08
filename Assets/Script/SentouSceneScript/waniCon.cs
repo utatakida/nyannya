@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class waniCon : MonoBehaviour
 {
+    Animator tengoku;
+
+    //ワニが倒されたときに増える金額
+    float wanikin = 50;
+
     //ワニのHP
     public int wani=1000;
 
@@ -33,7 +38,9 @@ public class waniCon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+
+        tengoku = GetComponent<Animator>();
+
         jikan =0;        //現在の時間
         kougeki=false;//ワニが攻撃可能になるとtrue
     }
@@ -60,7 +67,18 @@ public class waniCon : MonoBehaviour
                 nockbackjikan = 0.75f;
                 nockback = false;
                 if (wanisyoukyo == true)
+                {
+                    if(kingakuCon.kingaku +wanikin <= kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku += wanikin;
+                    }
+                    if (kingakuCon.kingaku + wanikin > kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku = kingakuCon.saidai;
+                    }
+
                     Destroy(gameObject);
+                }
             }
         }
        

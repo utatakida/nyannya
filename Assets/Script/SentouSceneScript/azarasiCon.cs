@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class azarasiCon : MonoBehaviour
 {
+    //アザラシが倒されたときに増える金額
+    float azarakin =650;
     //アザラシのHP
     public int azarasi = 1000;
 
@@ -60,7 +62,17 @@ public class azarasiCon : MonoBehaviour
                 nockbackjikan = 0.75f;
                 nockback = false;
                 if (azarasisyoukyo == true)
+                {
+                    if (kingakuCon.kingaku + azarakin <= kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku += azarakin;
+                    }
+                    if (kingakuCon.kingaku + azarakin > kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku = kingakuCon.saidai;
+                    }
                     Destroy(gameObject);
+                }
             }
         }
 

@@ -64,11 +64,16 @@
     <Compile Include="Assets\naichilab\FadeManager\Scripts\FadeManager.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\azarasiCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\azarasiGene.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\BGMCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\ClearCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\DownGUI.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\hatarakinekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoGene.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kingakuCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\LeftGUI.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\LightGUI.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\nekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\nekoCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\nekoGene.cs" />
