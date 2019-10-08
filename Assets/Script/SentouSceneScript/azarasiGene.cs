@@ -25,7 +25,7 @@ public class azarasiGene : MonoBehaviour
 
         jikan += Time.deltaTime;
         //アザラシの出陣コード
-        if (jikan > 10f)
+        if (jikan >10000f)
         {
             //アザラシの位置とレイヤーを合わせる
             randamu = Random.Range(1, 5);

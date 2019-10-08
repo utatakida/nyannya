@@ -91,6 +91,7 @@ public class kimonekoCon : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
+        
         //敵城への攻撃判定
         if (collision.gameObject.name == "syatihoko")
         {
@@ -121,12 +122,18 @@ public class kimonekoCon : MonoBehaviour
                 kougeki = false;
             }
         }
+
     }
+    //きもねこが攻撃をしないときは前進
     public void OnTriggerExit2D(Collider2D collision)
     {
+
         if (collision.gameObject.name == "WaniAtarihantei")
-        {
             atari = false;
-        }
+        if (collision.gameObject.name == "AzarasiAtarihantei")
+            atari = false;
+        if (collision.gameObject.name == "syatihoko")
+            atari = false;
     }
+
 }

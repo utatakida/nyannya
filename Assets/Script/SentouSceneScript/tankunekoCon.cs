@@ -114,12 +114,15 @@ public class tankunekoCon : MonoBehaviour
             }
         }
     }
+    //タンク猫が攻撃をしないときは前進
     public void OnTriggerExit2D(Collider2D collision)
     {
 
         if (collision.gameObject.name == "WaniAtarihantei")
             atari = false;
-        if (collision.gameObject.name == "WaniKougekihantei")
+        if (collision.gameObject.name == "AzarasiAtarihantei")
+            atari = false;
+        if (collision.gameObject.name == "syatihoko")
             atari = false;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class syatihokoCon : MonoBehaviour
 {
@@ -19,10 +20,11 @@ public class syatihokoCon : MonoBehaviour
 
         if (syatihoko < 0)
         {
-            Debug.Log("ゲームクリア"); 
+            Debug.Log("ゲームクリア");
+            syatihoko = 0;
         }
         //しゃちほこの体力を表示
-        syatihokotairyoku.GetComponent<Text>().text = syatihoko + "/" + "5000";
+        syatihokotairyoku.GetComponent<TextMeshProUGUI>().text = syatihoko + "/" + "5000";
 
 
     }

@@ -8,7 +8,7 @@ public class waniCon : MonoBehaviour
     public int wani=1000;
 
     //ワニの攻撃力
-    int kougekiryoku=500;
+    int kougekiryoku=100;
     
     //ワニの攻撃範囲
     public bool atari=false;
@@ -139,10 +139,11 @@ public class waniCon : MonoBehaviour
         }
         
     }
-
+    //ワニが攻撃をしないときは前進
     public void OnTriggerExit2D(Collider2D collision)
     {
-
+        if (collision.gameObject.name == "nyankojyou")
+            atari = false;
         if (collision.gameObject.name == "TankunekoAtarihantei")
             atari = false;
         if (collision.gameObject.name == "NekoAtarihantei")

@@ -5,7 +5,7 @@ using UnityEngine;
 public class nekoCon : MonoBehaviour
 {
     //猫のコライダーが他のコライダーに接触したかのbool
-    public bool atari;
+    bool atari;
 
     //猫の体力
     public int neko = 1000;
@@ -16,9 +16,12 @@ public class nekoCon : MonoBehaviour
     //猫の移動速度
     float sokudo = 0.45f;
     //猫の攻撃時間を設定
-    float kougekijikan=1;
+    float kougekijikan=1.28f;
     float jikan;
     bool kougeki;
+
+    //猫のアニメータ開始時間を設定
+    float animejikan = 1.00f;
 
     //猫のノックバック
     bool nockback = false;
@@ -29,7 +32,11 @@ public class nekoCon : MonoBehaviour
     //猫の消去
     bool nekosyoukyo = false;
 
-    
+    //アニメーターを取得
+    Animator animator;
+    bool kougekianime;
+    bool kougekianimejikan;
+    float kaisijikan = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +46,8 @@ public class nekoCon : MonoBehaviour
        
         jikan = 0;
         kougeki = false;
+
+        this.animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,21 +75,53 @@ public class nekoCon : MonoBehaviour
                     Destroy(gameObject);
             }
         }
-        //猫の攻撃時間を設定
+        //猫の攻撃時間を設定とアニメ時間を設定
         jikan += Time.deltaTime;
         if (jikan > kougekijikan)
         {
             kougeki = true;
             jikan =0;
         }
-        
-        
+        if (jikan > animejikan)
+        {
+            kougekianimejikan = true;
+        }
         //猫の移動速度
         if (atari == true)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-        if(atari==false)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
+        else
+        {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-sokudo, 0);
-       
+        }
+
+        //攻撃アニメーションの設定
+        if (kougekianime == true)
+        {
+            kaisijikan += Time.deltaTime;
+            if (kaisijikan > 0.28f)
+            {
+                kougekianime = false;
+                kaisijikan = 0;
+            }
+            kougekianimejikan = false;
+            GetComponent<Animator>().SetInteger("state", 2);
+        }
+        else
+        {
+            //猫の移動速度
+            if (atari == true)
+            {
+                GetComponent<Animator>().SetInteger("state", 1);
+            }
+            else
+            {
+                GetComponent<Animator>().SetInteger("state", 0);
+            }
+
+        }
+
         //猫の体力がなくなったら消去
         if (neko < 0)
         {
@@ -102,6 +143,10 @@ public class nekoCon : MonoBehaviour
                 collision.transform.root.gameObject.GetComponent<syatihokoCon>().syatihoko -= kougekiryoku;
                 kougeki = false;
             }
+            if (kougekianimejikan == true)
+            {
+                kougekianime = true;
+            }
         }
         //ワニの当たり判定に入るとワニのHPを減らす
         if (collision.gameObject.name == "WaniAtarihantei")
@@ -111,6 +156,11 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<waniCon>().wani -= kougekiryoku;
                 kougeki = false;
+                kougekianime = true;
+            }
+            if (kougekianimejikan == true)
+            {
+                kougekianime = true;
             }
         }
         //アザラシ当たり判定
@@ -121,17 +171,25 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<azarasiCon>().azarasi -= kougekiryoku;
                 kougeki = false;
+                kougekianime = true;
+            }
+            if (kougekianimejikan == true)
+            {
+                kougekianime = true;
             }
         }
+
+       
     }
-    
-        
-    
+    //猫が攻撃をしないときは前進
     public void OnTriggerExit2D(Collider2D collision)
     {
+
         if (collision.gameObject.name == "WaniAtarihantei")
-        {
             atari = false;
-        }
+        if (collision.gameObject.name == "AzarasiAtarihantei")
+            atari = false;
+        if (collision.gameObject.name == "syatihoko")
+            atari = false;
     }
 }

@@ -82,6 +82,7 @@ public class tankunekoButton : MonoBehaviour
         {
             saiseisan.SetActive(false);
         }
+        else saiseisan.SetActive(true);
 
     }
     public void OnClick()
