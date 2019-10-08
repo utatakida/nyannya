@@ -64,6 +64,7 @@
     <Compile Include="Assets\naichilab\FadeManager\Scripts\FadeManager.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\azarasiCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\azarasiGene.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\Buttonanime.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\hatarakinekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoCon.cs" />
