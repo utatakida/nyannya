@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.39726782, y: -0.21115112}
+  m_Offset: {x: -0.9356086, y: -0.36596632}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1849723, y: 5.2699437}
+  m_Size: {x: 4.261654, y: 5.5795746}
   m_EdgeRadius: 0
 --- !u!1 &3703452621645510805
 GameObject:
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9186811, y: 0.046922684}
+  m_Offset: {x: 2.1123943, y: 0.046922684}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.7243834, y: 6.067625}
+  m_Size: {x: 1.7752095, y: 6.067625}
   m_EdgeRadius: 0
 --- !u!1 &6213643479491160158
 GameObject:
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 2888755281266298849}
   - component: {fileID: 7624001713825725734}
   m_Layer: 0
-  m_Name: Azarasi
+  m_Name: AzarasiPre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

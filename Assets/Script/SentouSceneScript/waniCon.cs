@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class waniCon : MonoBehaviour
 {
+    Animator tengoku;
+
+    //ワニが倒されたときに増える金額
+    float wanikin = 50;
+
     //ワニのHP
     public int wani=1000;
 
     //ワニの攻撃力
-    int kougekiryoku=500;
+    int kougekiryoku=100;
     
     //ワニの攻撃範囲
     public bool atari=false;
@@ -33,7 +38,9 @@ public class waniCon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+
+        tengoku = GetComponent<Animator>();
+
         jikan =0;        //現在の時間
         kougeki=false;//ワニが攻撃可能になるとtrue
     }
@@ -60,7 +67,18 @@ public class waniCon : MonoBehaviour
                 nockbackjikan = 0.75f;
                 nockback = false;
                 if (wanisyoukyo == true)
+                {
+                    if(kingakuCon.kingaku +wanikin <= kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku += wanikin;
+                    }
+                    if (kingakuCon.kingaku + wanikin > kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku = kingakuCon.saidai;
+                    }
+
                     Destroy(gameObject);
+                }
             }
         }
        
@@ -139,10 +157,11 @@ public class waniCon : MonoBehaviour
         }
         
     }
-
+    //ワニが攻撃をしないときは前進
     public void OnTriggerExit2D(Collider2D collision)
     {
-
+        if (collision.gameObject.name == "nyankojyou")
+            atari = false;
         if (collision.gameObject.name == "TankunekoAtarihantei")
             atari = false;
         if (collision.gameObject.name == "NekoAtarihantei")

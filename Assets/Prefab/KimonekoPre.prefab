@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322fbf5c2cea4164a9c2f320b1864272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atari: 0
+  kimoneko: 1000
 --- !u!95 &2054789524803786992
 Animator:
   serializedVersion: 3
@@ -181,7 +181,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.8289744, y: -1.9241414}
+  m_Offset: {x: 3.698626, y: -1.3107958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -192,7 +192,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2576058, y: 4.848283}
+  m_Size: {x: 4.675249, y: 8.697556}
   m_EdgeRadius: 0
 --- !u!1 &7695358642826693255
 GameObject:
@@ -238,7 +238,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3606416, y: -1.7344375}
+  m_Offset: {x: 0.92600095, y: -1.7344375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -249,5 +249,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.8429193, y: 4.468875}
+  m_Size: {x: 3.2696345, y: 6.7530584}
   m_EdgeRadius: 0

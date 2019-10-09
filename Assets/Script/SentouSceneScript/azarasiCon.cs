@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class azarasiCon : MonoBehaviour
 {
+    //アザラシが倒されたときに増える金額
+    float azarakin =650;
     //アザラシのHP
     public int azarasi = 1000;
 
     //アザラシの攻撃力
-    int kougekiryoku = 500;
+    int kougekiryoku = 100;
 
     //アザラシの攻撃範囲
     public bool atari = false;
@@ -28,7 +30,7 @@ public class azarasiCon : MonoBehaviour
     int nockbacktairyoku = 500;
 
     //アザラシの消去
-    bool wanisyoukyo = false;
+    bool azarasisyoukyo = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,8 +61,18 @@ public class azarasiCon : MonoBehaviour
             {
                 nockbackjikan = 0.75f;
                 nockback = false;
-                if (wanisyoukyo == true)
+                if (azarasisyoukyo == true)
+                {
+                    if (kingakuCon.kingaku + azarakin <= kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku += azarakin;
+                    }
+                    if (kingakuCon.kingaku + azarakin > kingakuCon.saidai)
+                    {
+                        kingakuCon.kingaku = kingakuCon.saidai;
+                    }
                     Destroy(gameObject);
+                }
             }
         }
 
@@ -68,7 +80,7 @@ public class azarasiCon : MonoBehaviour
         if (azarasi< 0)
         {
             nockback = true;
-            wanisyoukyo = true;
+            azarasisyoukyo = true;
         }
 
         //アザラシの攻撃時間を設定
@@ -93,54 +105,62 @@ public class azarasiCon : MonoBehaviour
     }
     public void OnTriggerStay2D(Collider2D collision)
     {
+        //にゃんこ城当たり判定
+        if (collision.gameObject.name == "nyankojyou")
+        {
+            atari = true;
+        }
+        //タンク猫の当たり判定
+        if (collision.gameObject.name == "TankunekoAtarihantei")
+        {
+            atari = true;
+        }
+        //猫の当たり判定
+        if (collision.gameObject.name == "NekoAtarihantei")
+        {
+            atari = true;
+        }
+        //きもねこの当たり判定
+        if (collision.gameObject.name == "KimonekoAtarihantei")
+        {
+            atari = true;
+        }
+        //アザラシの攻撃範囲を全体攻撃にする
         if (kougeki == true)
         {
-            //にゃんこ城当たり判定
             if (collision.gameObject.name == "nyankojyou")
             {
-                atari = true;
-
-
                 collision.transform.root.gameObject.GetComponent<nyankojyouCon>().nyankojyou -= kougekiryoku;
                 kougeki = false;
-
+                
             }
             //タンク猫の当たり判定
             if (collision.gameObject.name == "TankunekoAtarihantei")
             {
-
-                atari = true;
-
                 collision.transform.root.gameObject.GetComponent<tankunekoCon>().tankuneko -= kougekiryoku;
                 kougeki = false;
-
-
             }
             //猫の当たり判定
             if (collision.gameObject.name == "NekoAtarihantei")
             {
-
-                atari = true;
-
-
                 collision.transform.root.gameObject.GetComponent<nekoCon>().neko -= kougekiryoku;
                 kougeki = false;
+
             }
             //きもねこの当たり判定
             if (collision.gameObject.name == "KimonekoAtarihantei")
             {
-                atari = true;
                 collision.transform.root.gameObject.GetComponent<kimonekoCon>().kimoneko -= kougekiryoku;
                 kougeki = false;
 
             }
-            kougeki = true;
         }
     }
-
+    //アザラシが攻撃をしないときは前進
     public void OnTriggerExit2D(Collider2D collision)
     {
-
+        if (collision.gameObject.name == "nyankojyou")
+            atari = false;
         if (collision.gameObject.name == "TankunekoAtarihantei")
             atari = false;
         if (collision.gameObject.name == "NekoAtarihantei")

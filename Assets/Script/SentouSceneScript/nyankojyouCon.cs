@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class nyankojyouCon : MonoBehaviour
 {
@@ -20,9 +21,10 @@ public class nyankojyouCon : MonoBehaviour
         if (nyankojyou < 0)
         {
             Debug.Log("ゲームオーバー");
+            nyankojyou =0;
         }
 
         //にゃんこ城の体力を表示
-        nyankojyoutairyoku.GetComponent<Text>().text = nyankojyou + "/" + "5000";
+        nyankojyoutairyoku.GetComponent<TextMeshProUGUI>().text = nyankojyou + "/" + "5000";
     }
 }
