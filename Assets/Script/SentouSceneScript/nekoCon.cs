@@ -15,13 +15,17 @@ public class nekoCon : MonoBehaviour
 
     //猫の移動速度
     float sokudo = 0.45f;
-    //猫の攻撃時間を設定
-    float kougekijikan=1.3f;
-    float jikan;
-    bool kougeki;
 
-    //猫のアニメータ開始時間を設定
-    float animejikan = 1.00f;
+    //猫の攻撃時間を設定
+    float jikan=0;
+    bool kougeki = false;
+
+    //猫のアニメータを設定
+    bool kougekianime;
+    float animekaisijikan = 1.00f;  //アニメ開始時間
+    bool animekaisi = false;
+    float aidanojikan =0.25f;         //アニメ開始から攻撃までの時間
+    float kougekijikan=0;
 
     //猫のノックバック
     bool nockback = false;
@@ -31,13 +35,7 @@ public class nekoCon : MonoBehaviour
 
     //猫の消去
     bool nekosyoukyo = false;
-
-    //アニメーターを取得
-    Animator animator;
-    bool kougekianime;
-    bool kougekianimejikan;
-    float kaisijikan = 0;
-
+ 
     //猫の現在の位置を取得
     Vector2 nekoiti;
 
@@ -50,10 +48,7 @@ public class nekoCon : MonoBehaviour
         atari = false;
 
        
-        jikan = 0;
-        kougeki = false;
-
-        this.animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -87,31 +82,34 @@ public class nekoCon : MonoBehaviour
                     Destroy(gameObject);
                     GameObject go = Instantiate(tensiPre) as GameObject;
                     go.transform.position = nekoiti;
-                    Debug.Log(nekoiti);
+                   
                 }
             }
         }
-        //猫の攻撃時間を設定とアニメ時間を設定
+        //猫の動きと攻撃の時間を合わせる
         jikan += Time.deltaTime;
-        if (jikan > kougekijikan)
+        if(jikan>animekaisijikan)
         {
-            kougeki = true;
-            jikan =0;
+            animekaisi = true;
         }
-        if (jikan > animejikan)
-        {
-            kougekianimejikan = true;
-        }
-        //攻撃アニメーションの設定
+
         if (kougekianime == true)
         {
-            kaisijikan += Time.deltaTime;
-            if (kaisijikan >kougekijikan-animejikan)
+            kougekijikan += Time.deltaTime;
+            if (kougekijikan > aidanojikan)
             {
+                kougeki = true;
+                jikan = 0;
+                kougekijikan = 0;
                 kougekianime = false;
-                kaisijikan = 0;
+                Debug.Log("攻撃");
+                animekaisi = false;
             }
-            kougekianimejikan = false;
+        }
+
+        //アニメの設定
+        if (kougekianime == true)
+        {
             GetComponent<Animator>().SetInteger("state", 2);
         }
         else
@@ -159,11 +157,13 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<syatihokoCon>().syatihoko -= kougekiryoku;
                 kougeki = false;
+              
             }
-            if (kougekianimejikan == true)
+            if (animekaisi == true)
             {
                 kougekianime = true;
             }
+
         }
         //ワニの当たり判定に入るとワニのHPを減らす
         if (collision.gameObject.name == "WaniAtarihantei")
@@ -173,9 +173,8 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<waniCon>().wani -= kougekiryoku;
                 kougeki = false;
-                kougekianime = true;
             }
-            if (kougekianimejikan == true)
+            if (animekaisi == true)
             {
                 kougekianime = true;
             }
@@ -188,12 +187,12 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<azarasiCon>().azarasi -= kougekiryoku;
                 kougeki = false;
-                kougekianime = true;
             }
-            if (kougekianimejikan == true)
+            if (animekaisi == true)
             {
                 kougekianime = true;
             }
+
         }
 
        

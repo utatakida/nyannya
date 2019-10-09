@@ -1497,9 +1497,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reStartButton: {fileID: 420891167}
   ridatuButton: {fileID: 819171199}
-  kakuPanel: {fileID: 961268364}
   backPanel: {fileID: 1577546222}
   OPPanel: {fileID: 937052770}
+  kakubackPanel: {fileID: 0}
+  kakuPanel: {fileID: 961268364}
+  yesButton: {fileID: 0}
+  noButton: {fileID: 0}
 --- !u!95 &270541095
 Animator:
   serializedVersion: 3
@@ -7533,6 +7536,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u30D0\u30C8\u30EBBGM"
       objectReference: {fileID: 0}
+    - target: {fileID: 2717636932557555604, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717636932557555604, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.439
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717636932557555604, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2717636932557555605, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7586,21 +7604,6 @@ PrefabInstance:
     - target: {fileID: 2717636932557555605, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717636932557555604, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717636932557555604, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.439
-      objectReference: {fileID: 0}
-    - target: {fileID: 2717636932557555604, guid: 37c1aaa9d47356241bf4fbc85d28e64b,
-        type: 3}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
