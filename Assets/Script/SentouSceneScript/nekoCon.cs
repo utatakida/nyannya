@@ -24,7 +24,7 @@ public class nekoCon : MonoBehaviour
     bool kougekianime;
     float animekaisijikan = 1.00f;  //アニメ開始時間
     bool animekaisi = false;
-    float aidanojikan =0.25f;         //アニメ開始から攻撃までの時間
+    float aidanojikan =0.29f;         //アニメ開始から攻撃までの時間
     float kougekijikan=0;
 
     //猫のノックバック
