@@ -108,23 +108,27 @@ public class nekoCon : MonoBehaviour
         }
 
         //アニメの設定
-        if (kougekianime == true)
-        {
-            GetComponent<Animator>().SetInteger("state", 2);
-        }
-        else
-        {
-            //猫の待機と歩きアニメーション
-            if (atari == true)
+
+            if (kougekianime == true)
             {
-                GetComponent<Animator>().SetInteger("state", 1);
+                GetComponent<Animator>().SetInteger("state", 2);
             }
             else
             {
-                GetComponent<Animator>().SetInteger("state", 0);
-            }
+                //猫の待機と歩きアニメーション
+                if (atari == true)
+                {
+                    GetComponent<Animator>().SetInteger("state", 1);
+                }
+                else
+                {
+                    GetComponent<Animator>().SetInteger("state", 0);
+                }
 
-        }
+            }
+        if (nockback == true)
+            GetComponent<Animator>().SetInteger("state", 3);
+
         //猫の移動速度
         if (atari == true)
         {
