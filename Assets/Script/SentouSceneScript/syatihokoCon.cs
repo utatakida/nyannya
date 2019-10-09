@@ -14,7 +14,7 @@ public class syatihokoCon : MonoBehaviour
  
     public AudioClip wini;
     public AudioSource SE;
-
+    bool sta = false;
     
 
     //HPがゼロになったかを調べる
@@ -38,10 +38,15 @@ public class syatihokoCon : MonoBehaviour
            
             win = 1;
             syatihoko = 0;
-
+            sta = true;
            
         }
-       
+        if(win==1&&sta==true)
+        {
+            SE.PlayOneShot(wini);
+            sta = false;
+        }
+
 
         //しゃちほこの体力を表示
         syatihokotairyoku.GetComponent<TextMeshProUGUI>().text = syatihoko + "/" + "5000";
