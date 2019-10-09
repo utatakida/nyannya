@@ -18,5 +18,9 @@ public class LeftGUI : MonoBehaviour
         {
             m_rectTransform.localPosition += new Vector3(-3, 0, 0);
         }
+        if (nyankojyouCon.Lose == 1)
+        {
+            m_rectTransform.localPosition += new Vector3(-3, 0, 0);
+        }
     }
 }

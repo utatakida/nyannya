@@ -18,5 +18,9 @@ public class LightGUI : MonoBehaviour
         {
             m_rectTransform.localPosition += new Vector3(0, 3, 0);
         }
+        if (nyankojyouCon.Lose == 1)
+        {
+            m_rectTransform.localPosition += new Vector3(0, 3, 0);
+        }
     }
 }

@@ -8,7 +8,7 @@ public class kaisiButtonCon : MonoBehaviour
 
     public void OnClick()
     {
-        SceneManager.LoadScene("SentouScene");
+        SceneManager.LoadScene("SentouScene");//カッコ内のシーンに移動
     }
     // Start is called before the first frame update
     void Start()

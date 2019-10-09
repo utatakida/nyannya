@@ -8,11 +8,16 @@ public class nyankojyouCon : MonoBehaviour
 {
     public int nyankojyou = 5000;
     GameObject nyankojyoutairyoku;
+  
 
+    //HPがゼロになったかを調べる
+    public static int Lose = 0;
+    public static bool lo = false;
     // Start is called before the first frame update
     void Start()
     {
         nyankojyoutairyoku = GameObject.Find("nyankojyoutairyoku");
+       
     }
 
     // Update is called once per frame
@@ -20,8 +25,10 @@ public class nyankojyouCon : MonoBehaviour
     {
         if (nyankojyou < 0)
         {
-            Debug.Log("ゲームオーバー");
+            Lose = 1;
             nyankojyou =0;
+            lo = true;
+
         }
 
         //にゃんこ城の体力を表示

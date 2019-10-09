@@ -12,11 +12,11 @@ public class syatihokoCon : MonoBehaviour
 
 
  
-    public AudioClip wini;
-    public AudioSource SE;
-    bool sta = false;
-    
+  
+  
+   public static bool ss=false;
 
+  
     //HPがゼロになったかを調べる
     public static int win =0;
 
@@ -25,8 +25,8 @@ public class syatihokoCon : MonoBehaviour
     {
         syatihokotairyoku = GameObject.Find("syatihokotairyoku");
 
-      
 
+     
     }
 
     // Update is called once per frame
@@ -38,14 +38,10 @@ public class syatihokoCon : MonoBehaviour
            
             win = 1;
             syatihoko = 0;
-            sta = true;
-           
+
+            ss = true;
         }
-        if(win==1&&sta==true)
-        {
-            SE.PlayOneShot(wini);
-            sta = false;
-        }
+       
 
 
         //しゃちほこの体力を表示
