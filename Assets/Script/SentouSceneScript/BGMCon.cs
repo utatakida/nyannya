@@ -6,14 +6,10 @@ public class BGMCon : MonoBehaviour
 {
 
 
+    public AudioClip BGM;
+    public AudioClip Win;
 
-    [SerializeField]
-    private AudioSource audios;
-   
-   
-
-
-
+    public AudioSource audios;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +23,7 @@ public class BGMCon : MonoBehaviour
         if(syatihokoCon.win ==true)
         {
             audios.Stop();
+            audios.PlayOneShot(Win);
 
          
         }

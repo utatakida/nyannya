@@ -76,12 +76,7 @@ public class PauseCon : MonoBehaviour
     //戦闘離脱した際の処理
     public void OnClick3()
     {
-        backPanel.SetActive(true);
-        OPPanel.SetActive(true);
-        kakuPanel.SetActive(false);
-        reStartButton.SetActive(true);
-        ridatuButton.SetActive(true);
-
+     
         kakuPanel.SetActive(true);
         kakubackPanel.SetActive(true);
         yesButton.SetActive(true);
@@ -103,7 +98,6 @@ public class PauseCon : MonoBehaviour
 
         backPanel.SetActive(true);
         OPPanel.SetActive(true);
-        kakuPanel.SetActive(false);
         reStartButton.SetActive(true);
         ridatuButton.SetActive(true);
 

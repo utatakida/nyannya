@@ -5,13 +5,16 @@ using UnityEngine;
 public class ClearCon : MonoBehaviour
 {
 
-    private Animator animator;
+    
+
+    [SerializeField, Header("速さ")]
+    float speed =2; //特定の位置まで行く速さ
 
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+       
 
     }
 
@@ -20,9 +23,10 @@ public class ClearCon : MonoBehaviour
     {
         if (syatihokoCon.win == true)
         {
-
-            animator.SetTrigger("win");
-
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(0,0,0), speed*Time.deltaTime);
         }
+
+
     }
+    
 }

@@ -22,6 +22,8 @@ public class kingakuCon : MonoBehaviour
 
     public static int kimoneko = 600;//きもねこの値段
 
+    public static int kyosin = 1300;//巨神猫の値段
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,7 @@ public class kingakuCon : MonoBehaviour
 
         //金額の骨組み
         if (kingaku < saidai)//金額の最大値がsaidaiの値
-            kingaku += Time.deltaTime * 10 ;//1秒間に100円ずつ増える
+            kingaku += Time.deltaTime * 100 ;//1秒間に100円ずつ増える
         this.kingakuText.GetComponent<TextMeshProUGUI>().text = ((int)kingaku) + "/" + saidai;//現在の金額と最大値の金額をTextに表示
 
 
