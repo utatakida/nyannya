@@ -61,7 +61,7 @@ public class nekoCon : MonoBehaviour
     {
         //猫の現在位置を取得
         nekoiti = GameObject.Find("nekoPre").transform.position;
-
+        
 
         //ノックバックを設定
         if (neko < nockbacktairyoku&&kaisuu%2==0)
@@ -81,11 +81,13 @@ public class nekoCon : MonoBehaviour
             {
                 nockbackjikan = 0.75f;
                 nockback = false;
+                //猫の天使化
                 if (nekosyoukyo == true)
                 {
                     Destroy(gameObject);
                     GameObject go = Instantiate(tensiPre) as GameObject;
                     go.transform.position = nekoiti;
+                    Debug.Log(nekoiti);
                 }
             }
         }
