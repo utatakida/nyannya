@@ -40,7 +40,7 @@ public class kingakuCon : MonoBehaviour
 
         //金額の骨組み
         if (kingaku < saidai)//金額の最大値がsaidaiの値
-            kingaku += Time.deltaTime * 100 ;//1秒間に100円ずつ増える
+            kingaku += Time.deltaTime * 35 ;//1秒間に100円ずつ増える
         this.kingakuText.GetComponent<TextMeshProUGUI>().text = ((int)kingaku) + "/" + saidai;//現在の金額と最大値の金額をTextに表示
 
 
