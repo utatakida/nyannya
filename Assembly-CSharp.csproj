@@ -84,6 +84,7 @@
     <Compile Include="Assets\Script\SentouSceneScript\tankunekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\tankunekoCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\tankunekoGene.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\tenisiCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\waniCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\waniGene.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\Audio.cs" />

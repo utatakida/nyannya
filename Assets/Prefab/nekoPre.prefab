@@ -96,8 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c53f95d2091d4e4a9965f63d4d86969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atari: 0
   neko: 1000
+  tensiPre: {fileID: 8090779640482631298, guid: 5756af78d9b4c84418c14361d3197aca,
+    type: 3}
 --- !u!50 &5351063381410322779
 Rigidbody2D:
   serializedVersion: 4

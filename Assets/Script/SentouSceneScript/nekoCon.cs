@@ -16,7 +16,7 @@ public class nekoCon : MonoBehaviour
     //猫の移動速度
     float sokudo = 0.45f;
     //猫の攻撃時間を設定
-    float kougekijikan=1.28f;
+    float kougekijikan=1.3f;
     float jikan;
     bool kougeki;
 
@@ -38,6 +38,12 @@ public class nekoCon : MonoBehaviour
     bool kougekianimejikan;
     float kaisijikan = 0;
 
+    //猫の現在の位置を取得
+    Vector2 nekoiti;
+
+    //天使のプレハブを取得
+    public GameObject tensiPre;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +59,10 @@ public class nekoCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //猫の現在位置を取得
+        nekoiti = GameObject.Find("nekoPre").transform.position;
+
+
         //ノックバックを設定
         if (neko < nockbacktairyoku&&kaisuu%2==0)
         {
@@ -65,6 +74,7 @@ public class nekoCon : MonoBehaviour
             if (nockbackjikan > 0)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right * 80);
+                jikan -= Time.deltaTime;
             }
             nockbackjikan -= Time.deltaTime;
             if (nockbackjikan < 0)
@@ -72,7 +82,11 @@ public class nekoCon : MonoBehaviour
                 nockbackjikan = 0.75f;
                 nockback = false;
                 if (nekosyoukyo == true)
+                {
                     Destroy(gameObject);
+                    GameObject go = Instantiate(tensiPre) as GameObject;
+                    go.transform.position = nekoiti;
+                }
             }
         }
         //猫の攻撃時間を設定とアニメ時間を設定
@@ -86,21 +100,11 @@ public class nekoCon : MonoBehaviour
         {
             kougekianimejikan = true;
         }
-        //猫の移動速度
-        if (atari == true)
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-sokudo, 0);
-        }
-
         //攻撃アニメーションの設定
         if (kougekianime == true)
         {
             kaisijikan += Time.deltaTime;
-            if (kaisijikan > 0.28f)
+            if (kaisijikan >kougekijikan-animejikan)
             {
                 kougekianime = false;
                 kaisijikan = 0;
@@ -110,7 +114,7 @@ public class nekoCon : MonoBehaviour
         }
         else
         {
-            //猫の移動速度
+            //猫の待機と歩きアニメーション
             if (atari == true)
             {
                 GetComponent<Animator>().SetInteger("state", 1);
@@ -121,6 +125,17 @@ public class nekoCon : MonoBehaviour
             }
 
         }
+        //猫の移動速度
+        if (atari == true)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-sokudo, 0);
+        }
+
+       
 
         //猫の体力がなくなったら消去
         if (neko < 0)

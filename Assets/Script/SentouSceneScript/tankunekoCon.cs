@@ -5,7 +5,7 @@ using UnityEngine;
 public class tankunekoCon : MonoBehaviour
 {
     //タンク猫の攻撃範囲     
-    public bool atari;
+    bool atari;
 
     //タンク猫の攻撃力
     int kougekiryoku = 100;
