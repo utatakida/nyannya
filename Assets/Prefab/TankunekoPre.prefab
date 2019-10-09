@@ -174,8 +174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbbec3ba2618fc458efbd5ed581e3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atari: 0
   tankuneko: 1000
+  tensiPre: {fileID: 8090779640482631298, guid: 5756af78d9b4c84418c14361d3197aca,
+    type: 3}
+  kemuri: {fileID: 736638389324473101, guid: b55018f3c1f1fea4884207f0f460b441, type: 3}
 --- !u!95 &2274392694773967843
 Animator:
   serializedVersion: 3

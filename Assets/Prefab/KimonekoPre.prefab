@@ -118,6 +118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kimoneko: 1000
+  tensiPre: {fileID: 8090779640482631298, guid: 5756af78d9b4c84418c14361d3197aca,
+    type: 3}
+  kemuri: {fileID: 736638389324473101, guid: b55018f3c1f1fea4884207f0f460b441, type: 3}
 --- !u!95 &2054789524803786992
 Animator:
   serializedVersion: 3
@@ -238,7 +241,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.92600095, y: -1.7344375}
+  m_Offset: {x: 0.71788764, y: -2.1723218}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -249,5 +252,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.2696345, y: 6.7530584}
+  m_Size: {x: 3.685861, y: 11.1319065}
   m_EdgeRadius: 0

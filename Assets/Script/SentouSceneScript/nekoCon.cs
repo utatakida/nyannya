@@ -11,7 +11,7 @@ public class nekoCon : MonoBehaviour
     public int neko = 1000;
 
     //猫の攻撃力
-    int kougekiryoku = 100;
+    int kougekiryoku = 150;
 
     //猫の移動速度
     float sokudo = 0.45f;
@@ -39,8 +39,13 @@ public class nekoCon : MonoBehaviour
     //猫の現在の位置を取得
     Vector2 nekoiti;
 
+    //攻撃時の煙の微調整
+    float tate = 0f;
+    float yoko = -1.0f;
+
     //天使のプレハブを取得
     public GameObject tensiPre;
+    public GameObject kemuri;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +76,7 @@ public class nekoCon : MonoBehaviour
                 GetComponent<Rigidbody2D>().AddForce(transform.right * 80);
                 jikan -= Time.deltaTime;
             }
+            
             nockbackjikan -= Time.deltaTime;
             if (nockbackjikan < 0)
             {
@@ -102,7 +108,6 @@ public class nekoCon : MonoBehaviour
                 jikan = 0;
                 kougekijikan = 0;
                 kougekianime = false;
-                Debug.Log("攻撃");
                 animekaisi = false;
             }
         }
@@ -161,7 +166,9 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<syatihokoCon>().syatihoko -= kougekiryoku;
                 kougeki = false;
-              
+                //攻撃時の煙演出を設定
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko+nekoiti.x,tate+nekoiti.y);
             }
             if (animekaisi == true)
             {
@@ -177,6 +184,9 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<waniCon>().wani -= kougekiryoku;
                 kougeki = false;
+                //攻撃時の煙演出を追加
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko + nekoiti.x, tate + nekoiti.y);
             }
             if (animekaisi == true)
             {
@@ -191,6 +201,9 @@ public class nekoCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<azarasiCon>().azarasi -= kougekiryoku;
                 kougeki = false;
+                //攻撃時の煙演出を設定
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko + nekoiti.x, tate + nekoiti.y);
             }
             if (animekaisi == true)
             {

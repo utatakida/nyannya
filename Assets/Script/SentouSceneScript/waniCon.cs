@@ -10,10 +10,10 @@ public class waniCon : MonoBehaviour
     float wanikin = 50;
 
     //ワニのHP
-    public int wani=1000;
+    public int wani=500;
 
     //ワニの攻撃力
-    int kougekiryoku=100;
+    int kougekiryoku=200;
     
     //ワニの攻撃範囲
     public bool atari=false;
@@ -21,10 +21,16 @@ public class waniCon : MonoBehaviour
     //ワニの移動速度
     float sokudo = 0.6f;
 
-    //ワニの攻撃時間
-    float kougekijikan=0.7f;
-    float jikan;
-    bool kougeki;
+    //ワニの攻撃時間を設定
+    float jikan = 0;
+    bool kougeki = false;
+
+    //ワニのアニメータを設定
+    bool kougekianime;
+    float animekaisijikan = 0.6f;  //アニメ開始時間
+    bool animekaisi = false;
+    float aidanojikan = 0.25f;         //アニメ開始から攻撃までの時間
+    float kougekijikan = 0;
 
     //ワニのノックバック
     bool nockback = false;
@@ -35,26 +41,28 @@ public class waniCon : MonoBehaviour
     //ワニの消去
     bool wanisyoukyo = false;
 
-    //ワニの攻撃アニメの設定
-    float wanianimejikan = 0.27f;
-    bool wanianimekaisi=false;
-    bool kougekianime = false;
-    float kaisijikan = 0;
+    //攻撃時の煙の微調整
+    float tate = 0f;
+    float yoko = 1.0f;
+
+    //ワニの現在の位置を取得
+    Vector2 waniiti;
+
+    //天使と煙のプレハブを取得
+    public GameObject tensiPre;
+    public GameObject kemuri;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        tengoku = GetComponent<Animator>();
-
-        jikan =0;        //現在の時間
-        kougeki=false;//ワニが攻撃可能になるとtrue
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //ワニの現在の位置を取得
+        waniiti = GameObject.Find("waniPre").transform.position;
         //ノックバックを設定
         if (wani < nockbacktairyoku && kaisuu % 2 == 0)
         {
@@ -91,6 +99,8 @@ public class waniCon : MonoBehaviour
                     }
 
                     Destroy(gameObject);
+                    GameObject go = Instantiate(tensiPre) as GameObject;
+                    go.transform.position = waniiti;
                 }
             }
         }
@@ -102,40 +112,51 @@ public class waniCon : MonoBehaviour
             wanisyoukyo = true;
         }
 
-        //ワニの攻撃時間とアニメ時間を設定
+        //ワニの動きと攻撃の時間を合わせる
         jikan += Time.deltaTime;
-        if (jikan > kougekijikan)
+        if (jikan > animekaisijikan)
         {
-            kougeki = true;
-            jikan = 0;
+            animekaisi = true;
         }
-        if (jikan > wanianimejikan)
+
+        if (kougekianime == true)
         {
-            wanianimekaisi = true;
-        }
-      /*  if (kougekianime == true)
-        {
-            kaisijikan += Time.deltaTime;
-            if (kaisijikan > kougekijikan - wanianimejikan)
+            kougekijikan += Time.deltaTime;
+            if (kougekijikan > aidanojikan)
             {
+                kougeki = true;
+                jikan = 0;
+                kougekijikan = 0;
                 kougekianime = false;
-                kaisijikan = 0;
+                animekaisi = false;
             }
-            GetComponent<Animator>().SetInteger("wanianime", 2);
-            wanianimekaisi = false;
+        }
+
+        //アニメの設定
+
+        if (kougekianime == true)
+        {
+            GetComponent<Animator>().SetInteger("state", 2);
         }
         else
         {
-            //ワニのアニメーションを設定
+            //ワニの待機と歩きアニメーション
             if (atari == true)
-                GetComponent<Animator>().SetInteger("wanianime", 1);
-            if (atari == false)
-                GetComponent<Animator>().SetInteger("wanianime", 0);
-        }*/
-            //ワニの移動速度と待機はここで設定
-            if (atari == true)
+            {
+                GetComponent<Animator>().SetInteger("state", 1);
+            }
+            else
+            {
+                GetComponent<Animator>().SetInteger("state", 0);
+            }
+
+        }
+        if (nockback == true)
+            GetComponent<Animator>().SetInteger("state", 3);
+        //ワニの移動速度と待機はここで設定
+        if (atari == true)
                 GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-            if (atari == false)
+        else
                 GetComponent<Rigidbody2D>().velocity = new Vector2(sokudo, 0);
 
         
@@ -154,11 +175,15 @@ public class waniCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<nyankojyouCon>().nyankojyou -= kougekiryoku;
                 kougeki = false;
+                //攻撃時の煙演出を設定
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko + waniiti.x, tate + waniiti.y);
             }
-            if (wanianimekaisi == true)
+            if (animekaisi == true)
             {
                 kougekianime = true;
             }
+
         }
         //タンク猫の当たり判定
         if (collision.gameObject.name == "TankunekoAtarihantei")
@@ -169,12 +194,14 @@ public class waniCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<tankunekoCon>().tankuneko -= kougekiryoku;
                 kougeki = false;
+                //攻撃時の煙演出を設定
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko + waniiti.x, tate + waniiti.y);
             }
-            if (wanianimekaisi == true)
+            if (animekaisi == true)
             {
                 kougekianime = true;
             }
-
         }
         //猫の当たり判定
         if (collision.gameObject.name == "NekoAtarihantei")
@@ -185,8 +212,11 @@ public class waniCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<nekoCon>().neko -= kougekiryoku;
                 kougeki = false;
+                //攻撃時の煙演出を設定
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko + waniiti.x, tate + waniiti.y);
             }
-            if (wanianimekaisi == true)
+            if (animekaisi == true)
             {
                 kougekianime = true;
             }
@@ -199,13 +229,33 @@ public class waniCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<kimonekoCon>().kimoneko -= kougekiryoku;
                 kougeki = false;
+                //攻撃時の煙演出を設定
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko + waniiti.x, tate + waniiti.y);
             }
-            if (wanianimekaisi == true)
+            if (animekaisi == true)
             {
                 kougekianime = true;
             }
         }
-        
+        //巨神の当たり判定
+        if (collision.gameObject.name == "KyosinAtarihantei")
+        {
+
+            atari = true;
+            if (kougeki == true)
+            {
+                collision.transform.root.gameObject.GetComponent<kyojinnekoCon>().kyojinneko -= kougekiryoku;
+                kougeki = false;
+                //攻撃時の煙演出を設定
+                GameObject go = Instantiate(kemuri) as GameObject;
+                go.transform.position = new Vector2(yoko + waniiti.x, tate + waniiti.y);
+            }
+            if (animekaisi == true)
+            {
+                kougekianime = true;
+            }
+        }
     }
     //ワニが攻撃をしないときは前進
     public void OnTriggerExit2D(Collider2D collision)
@@ -217,6 +267,8 @@ public class waniCon : MonoBehaviour
         if (collision.gameObject.name == "NekoAtarihantei")
             atari = false;
         if (collision.gameObject.name == "KimonekoAtarihantei")
+            atari = false;
+        if (collision.gameObject.name == "KyosinAtarihantei")
             atari = false;
     }
 

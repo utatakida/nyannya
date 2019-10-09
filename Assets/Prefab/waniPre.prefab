@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 2269864316082851458}
   - component: {fileID: 2269864316082851461}
   - component: {fileID: 2269864316082851460}
-  - component: {fileID: 5537140723162429773}
+  - component: {fileID: 1031022708815126475}
   m_Layer: 0
   m_Name: waniPre
   m_TagString: Untagged
@@ -155,6 +155,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wani: 1000
   atari: 0
+  tensiPre: {fileID: 8090779640482631298, guid: 5756af78d9b4c84418c14361d3197aca,
+    type: 3}
+  kemuri: {fileID: 736638389324473101, guid: b55018f3c1f1fea4884207f0f460b441, type: 3}
 --- !u!50 &2269864316082851460
 Rigidbody2D:
   serializedVersion: 4
@@ -176,7 +179,7 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &5537140723162429773
+--- !u!95 &1031022708815126475
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -186,7 +189,7 @@ Animator:
   m_GameObject: {fileID: 2269864316082851463}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c780d4e765e2b68478b4fb200df4b6af, type: 2}
+  m_Controller: {fileID: 9100000, guid: b49b8b0a9b9d93347871a6fe0764f22e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -73,6 +73,9 @@
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kimonekoGene.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kingakuCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\kougekikemuriCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\kyojinnekoCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\kyojinnekoGene.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\kyosinnekoButton.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\LeftGUI.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\LightGUI.cs" />
