@@ -65,6 +65,7 @@
     <Compile Include="Assets\Script\SentouSceneScript\azarasiCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\azarasiGene.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\BGMCon.cs" />
+    <Compile Include="Assets\Script\SentouSceneScript\Buttonanime.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\ClearCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\DownGUI.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\hatarakinekoButton.cs" />
@@ -85,11 +86,14 @@
     <Compile Include="Assets\Script\SentouSceneScript\tankunekoGene.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\waniCon.cs" />
     <Compile Include="Assets\Script\SentouSceneScript\waniGene.cs" />
+    <Compile Include="Assets\Script\tittle&amp;option.script\Audio.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\backButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\batuButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\kaisiButtonCon.cs" />
+    <Compile Include="Assets\Script\tittle&amp;option.script\noButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\oputionButtonCon.cs" />
     <Compile Include="Assets\Script\tittle&amp;option.script\startButtonCon.cs" />
+    <Compile Include="Assets\Script\tittle&amp;option.script\yesButtonCon.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
