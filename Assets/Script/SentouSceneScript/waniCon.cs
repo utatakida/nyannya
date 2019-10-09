@@ -17,7 +17,7 @@ public class waniCon : MonoBehaviour
     float sokudo = 0.6f;
 
     //ワニの攻撃時間
-    float kougekijikan=1;
+    float kougekijikan=0.7f;
     float jikan;
     bool kougeki;
 
@@ -29,6 +29,12 @@ public class waniCon : MonoBehaviour
 
     //ワニの消去
     bool wanisyoukyo = false;
+
+    //ワニの攻撃アニメの設定
+    float wanianimejikan = 0.27f;
+    bool wanianimekaisi=false;
+    bool kougekianime = false;
+    float kaisijikan = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -53,12 +59,19 @@ public class waniCon : MonoBehaviour
             if (nockbackjikan > 0)
             {
                 GetComponent<Rigidbody2D>().AddForce(transform.right *- 80);
+                jikan -= Time.deltaTime;
             }
             nockbackjikan -= Time.deltaTime;
             if (nockbackjikan < 0)
             {
                 nockbackjikan = 0.75f;
                 nockback = false;
+                if (jikan > kougekijikan)
+                {
+                    jikan = kougekijikan;
+                }
+                else if (jikan < kougekijikan)
+                    jikan -= 0.3f;
                 if (wanisyoukyo == true)
                     Destroy(gameObject);
             }
@@ -71,24 +84,45 @@ public class waniCon : MonoBehaviour
             wanisyoukyo = true;
         }
 
-        //ワニの攻撃時間を設定
+        //ワニの攻撃時間とアニメ時間を設定
         jikan += Time.deltaTime;
         if (jikan > kougekijikan)
         {
             kougeki = true;
             jikan = 0;
         }
-      
+        if (jikan > wanianimejikan)
+        {
+            wanianimekaisi = true;
+        }
+      /*  if (kougekianime == true)
+        {
+            kaisijikan += Time.deltaTime;
+            if (kaisijikan > kougekijikan - wanianimejikan)
+            {
+                kougekianime = false;
+                kaisijikan = 0;
+            }
+            GetComponent<Animator>().SetInteger("wanianime", 2);
+            wanianimekaisi = false;
+        }
+        else
+        {
+            //ワニのアニメーションを設定
+            if (atari == true)
+                GetComponent<Animator>().SetInteger("wanianime", 1);
+            if (atari == false)
+                GetComponent<Animator>().SetInteger("wanianime", 0);
+        }*/
+            //ワニの移動速度と待機はここで設定
+            if (atari == true)
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            if (atari == false)
+                GetComponent<Rigidbody2D>().velocity = new Vector2(sokudo, 0);
+
+        
 
 
-        if (atari == true)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        if(atari==false)
-            GetComponent<Rigidbody2D>().velocity = new Vector2(sokudo, 0);
-          
-            
-        
-        
 
     }
     public void OnTriggerStay2D(Collider2D collision)
@@ -103,6 +137,10 @@ public class waniCon : MonoBehaviour
                 collision.transform.root.gameObject.GetComponent<nyankojyouCon>().nyankojyou -= kougekiryoku;
                 kougeki = false;
             }
+            if (wanianimekaisi == true)
+            {
+                kougekianime = true;
+            }
         }
         //タンク猫の当たり判定
         if (collision.gameObject.name == "TankunekoAtarihantei")
@@ -113,6 +151,10 @@ public class waniCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<tankunekoCon>().tankuneko -= kougekiryoku;
                 kougeki = false;
+            }
+            if (wanianimekaisi == true)
+            {
+                kougekianime = true;
             }
 
         }
@@ -126,6 +168,10 @@ public class waniCon : MonoBehaviour
                 collision.transform.root.gameObject.GetComponent<nekoCon>().neko -= kougekiryoku;
                 kougeki = false;
             }
+            if (wanianimekaisi == true)
+            {
+                kougekianime = true;
+            }
         }
         //きもねこの当たり判定
         if (collision.gameObject.name == "KimonekoAtarihantei")
@@ -135,6 +181,10 @@ public class waniCon : MonoBehaviour
             {
                 collision.transform.root.gameObject.GetComponent<kimonekoCon>().kimoneko -= kougekiryoku;
                 kougeki = false;
+            }
+            if (wanianimekaisi == true)
+            {
+                kougekianime = true;
             }
         }
         
