@@ -8,20 +8,25 @@ public class syatihokoCon : MonoBehaviour
 {
     public int syatihoko=5000;
     GameObject syatihokotairyoku;
+
+
+
+ 
+    public AudioClip wini;
+    public AudioSource SE;
+
     
 
-    [SerializeField]
-    private AudioSource audios;
-    public AudioClip cler;
-
     //HPがゼロになったかを調べる
-    public static bool win = false;
+    public static int win =0;
 
     // Start is called before the first frame update
     void Start()
     {
         syatihokotairyoku = GameObject.Find("syatihokotairyoku");
-       
+
+      
+
     }
 
     // Update is called once per frame
@@ -30,12 +35,14 @@ public class syatihokoCon : MonoBehaviour
         //クリア時の処理
         if (syatihoko < 0)
         {
-            win = true;
-            syatihoko = 0;
            
+            win = 1;
+            syatihoko = 0;
 
+           
         }
        
+
         //しゃちほこの体力を表示
         syatihokotairyoku.GetComponent<TextMeshProUGUI>().text = syatihoko + "/" + "5000";
 

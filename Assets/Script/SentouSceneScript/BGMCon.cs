@@ -4,30 +4,20 @@ using UnityEngine;
 
 public class BGMCon : MonoBehaviour
 {
-
-
-    public AudioClip BGM;
-    public AudioClip Win;
-
-    public AudioSource audios;
+    public AudioSource backBGM;
     // Start is called before the first frame update
     void Start()
     {
-        audios.Play();
-      
+        backBGM.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(syatihokoCon.win ==true)
+      if(syatihokoCon.win==1)
         {
-            audios.Stop();
-            audios.PlayOneShot(Win);
+            backBGM.Stop();
 
-         
         }
-
-
     }
 }

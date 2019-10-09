@@ -14,9 +14,9 @@ public class LeftGUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (syatihokoCon.win == true)
+        if (syatihokoCon.win == 1)
         {
-            m_rectTransform.localPosition += new Vector3(-10, 0, 0);
+            m_rectTransform.localPosition += new Vector3(-3, 0, 0);
         }
     }
 }
