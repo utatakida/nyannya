@@ -12,6 +12,9 @@ public class azarasiGene : MonoBehaviour
     int randamu;
     float syousuu = 0;
 
+    //アザラシの出撃時間を決める
+    float syutugekijikan = 5f;
+
     // Start is called before the first frame update
     void Start()
     {

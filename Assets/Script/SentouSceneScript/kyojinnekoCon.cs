@@ -11,7 +11,7 @@ public class kyojinnekoCon : MonoBehaviour
     public int kyojinneko = 1000;
 
     //猫の攻撃力
-    int kougekiryoku = 150;
+    int kougekiryoku = 3000;
 
     //猫の移動速度
     float sokudo = 0.45f;
