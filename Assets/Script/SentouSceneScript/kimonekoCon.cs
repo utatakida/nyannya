@@ -8,10 +8,10 @@ public class kimonekoCon : MonoBehaviour
     bool atari;
 
     //きもねこの体力
-    public int kimoneko = 1000;
+    public int kimoneko = 500;
 
     //きもねこの攻撃力
-    int kougekiryoku = 2000;
+    int kougekiryoku = 1000;
 
     //きもねこの移動速度
     float sokudo = 0.55f;
@@ -70,7 +70,7 @@ public class kimonekoCon : MonoBehaviour
         {
             if (nockbackjikan > 0)
             {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * 80);
+                GetComponent<Rigidbody2D>().AddForce(transform.right * 10);
             }
             nockbackjikan -= Time.deltaTime;
             if (nockbackjikan < 0)

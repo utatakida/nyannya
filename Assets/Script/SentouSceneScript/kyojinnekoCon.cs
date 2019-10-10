@@ -11,7 +11,7 @@ public class kyojinnekoCon : MonoBehaviour
     public int kyojinneko = 1000;
 
     //猫の攻撃力
-    int kougekiryoku = 3000;
+    int kougekiryoku = 1800;
 
     //猫の移動速度
     float sokudo = 0.45f;
@@ -70,7 +70,7 @@ public class kyojinnekoCon : MonoBehaviour
         {
             if (nockbackjikan > 0)
             {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * 80);
+                GetComponent<Rigidbody2D>().AddForce(transform.right * 10);
                 jikan -= Time.deltaTime;
             }
 

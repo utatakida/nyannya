@@ -73,7 +73,7 @@ public class nekoCon : MonoBehaviour
         {
             if (nockbackjikan > 0)
             {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * 80);
+                GetComponent<Rigidbody2D>().AddForce(transform.right * 10);
                 jikan -= Time.deltaTime;
             }
             

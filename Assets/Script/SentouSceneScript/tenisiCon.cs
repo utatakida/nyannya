@@ -14,8 +14,8 @@ public class tenisiCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0.08f, 0);
-        if(transform.position.y > 5.0f)
+        transform.Translate(0, 0.005f, 0);
+        if(transform.position.y > 4.0f)
         {
             Destroy(gameObject);
         }

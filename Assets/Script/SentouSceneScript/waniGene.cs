@@ -11,6 +11,10 @@ public class waniGene : MonoBehaviour
     //ワニの出現位置とレイヤーを合わせる
     int randamu;
     float syousuu=0;
+
+    //ワニ出撃可能bool
+    bool wanigo = false;
+    float syutugekijikan=0;
    
     // Start is called before the first frame update
     void Start()
@@ -24,8 +28,29 @@ public class waniGene : MonoBehaviour
        
 
         jikan += Time.deltaTime;
+
+
+        int a = GameObject.Find("syatihoko").GetComponent<syatihokoCon>().syatihoko;
+
+        if (a == 10000)
+        {
+            syutugekijikan = 5;
+        }
+        else if (a < 10000 && 5000 < a)
+        {
+            syutugekijikan = 2;
+        }
+        else if (a < 5000 && 2000 < a)
+        {
+            syutugekijikan = 0.9f;
+        }
+        else
+        {
+            syutugekijikan = 1.5f;
+        }
+
         //ワニの出陣コード
-        if (jikan>4f&&syatihokoCon.win==false)
+        if (jikan>syutugekijikan&&syatihokoCon.win<1)
         {
             //ワニの位置とレイヤーを合わせる
             randamu = Random.Range(1, 5);
@@ -47,7 +72,7 @@ public class waniGene : MonoBehaviour
             go.transform.position = new Vector3(-6,-1.1f+syousuu,0);
             jikan = 0;
             syousuu = 0;
-           
+            wanigo = false;
         }
     }
 }

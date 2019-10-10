@@ -30,7 +30,7 @@ public class kingakuCon : MonoBehaviour
     {
         this.kingakuText = GameObject.Find("kingakuText");
         kingaku = 0;//金額を0から始める
-        saidai = 800;//金額の最大値はここで変更
+        saidai = 500;//金額の最大値はここで変更
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class kingakuCon : MonoBehaviour
 
         //金額の骨組み
         if (kingaku < saidai)//金額の最大値がsaidaiの値
-            kingaku += Time.deltaTime * 35 ;//1秒間に100円ずつ増える
+            kingaku += Time.deltaTime * 65 ;//1秒間に100円ずつ増える
         this.kingakuText.GetComponent<TextMeshProUGUI>().text = ((int)kingaku) + "/" + saidai;//現在の金額と最大値の金額をTextに表示
 
 

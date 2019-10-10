@@ -27,15 +27,13 @@ public class WinBGMCon : MonoBehaviour
         {
             
             syatihokoCon.ss = false;
-            audioSource.PlayOneShot(derutoki);
-            BGM.Stop();
+          
 
         }
         if(nyankojyouCon.Lose==1&&nyankojyouCon.lo==true)
         {
             nyankojyouCon.lo = false;
-            audioSource.PlayOneShot(denaitoki);
-            BGM.Stop();
+            
         }
 
     }

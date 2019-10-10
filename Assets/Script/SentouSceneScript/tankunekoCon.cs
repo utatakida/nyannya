@@ -8,10 +8,10 @@ public class tankunekoCon : MonoBehaviour
     bool atari;
 
     //タンク猫の攻撃力
-    int kougekiryoku = 10;
+    int kougekiryoku = 50;
 
     //タンク猫の体力
-    public int tankuneko = 3000;
+    public int tankuneko = 2500;
 
     //タンク猫の速度
     float sokudo = 0.55f;
@@ -69,7 +69,7 @@ public class tankunekoCon : MonoBehaviour
         {
             if (nockbackjikan > 0)
             {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * 80);
+                GetComponent<Rigidbody2D>().AddForce(transform.right * 10);
             }
             nockbackjikan -= Time.deltaTime;
             if (nockbackjikan < 0)

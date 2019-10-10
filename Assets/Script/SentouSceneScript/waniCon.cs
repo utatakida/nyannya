@@ -19,7 +19,7 @@ public class waniCon : MonoBehaviour
     public bool atari=false;
 
     //ワニの移動速度
-    float sokudo = 0.6f;
+    float sokudo = 0.9f;
 
     //ワニの攻撃時間を設定
     float jikan = 0;
@@ -73,7 +73,7 @@ public class waniCon : MonoBehaviour
         {
             if (nockbackjikan > 0)
             {
-                GetComponent<Rigidbody2D>().AddForce(transform.right *- 80);
+                GetComponent<Rigidbody2D>().AddForce(transform.right *- 10);
                 jikan -= Time.deltaTime;
             }
             nockbackjikan -= Time.deltaTime;

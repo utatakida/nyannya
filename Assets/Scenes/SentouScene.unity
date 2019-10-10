@@ -2712,8 +2712,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3682, y: 0}
-  m_SizeDelta: {x: 4685.8, y: 0}
+  m_AnchoredPosition: {x: 4504.2, y: 0}
+  m_SizeDelta: {x: 6330.3, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470954987
 MonoBehaviour:
@@ -3744,7 +3744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0c1366228b22a4a8d98b65efe59a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syatihoko: 5000
+  syatihoko: 10000
 --- !u!1 &647602331 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1999436659550576035, guid: 8f5f6b47ffcb92c4cb70c9f640992a0f,
@@ -8636,8 +8636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -244.99997, y: 69.94693}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -217.03, y: 66.068}
+  m_SizeDelta: {x: 348.77, y: 42.243}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1526302296
 MonoBehaviour:
@@ -9171,6 +9171,51 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1241554073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1687179858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687179860}
+  - component: {fileID: 1687179859}
+  m_Layer: 0
+  m_Name: KyosinGene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1687179859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687179858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea86e025f3455c46a0a001597321910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kyosinPre: {fileID: 1204111707203950436, guid: e69e04cfad64b3842a800bebd35bf45b,
+    type: 3}
+--- !u!4 &1687179860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687179858}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3547125, y: 0.26798576, z: 1.4146585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771137129
 GameObject:
   m_ObjectHideFlags: 0

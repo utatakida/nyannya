@@ -7,16 +7,16 @@ public class azarasiCon : MonoBehaviour
     //アザラシが倒されたときに増える金額
     float azarakin =650;
     //アザラシのHP
-    public int azarasi = 1000;
+    public int azarasi = 3000;
 
     //アザラシの攻撃力
-    int kougekiryoku = 500;
+    int kougekiryoku = 700;
 
     //アザラシの攻撃範囲
     bool atari = false;
 
     //アザラシの移動速度
-    float sokudo = 0.6f;
+    float sokudo = 0.4f;
 
    
     //アザラシのノックバック
@@ -72,7 +72,7 @@ public class azarasiCon : MonoBehaviour
         {
             if (nockbackjikan > 0)
             {
-                GetComponent<Rigidbody2D>().AddForce(transform.right * -80);
+                GetComponent<Rigidbody2D>().AddForce(transform.right * -10);
             }
             nockbackjikan -= Time.deltaTime;
             if (nockbackjikan < 0)

@@ -17,12 +17,12 @@ public class OutSceneCon : MonoBehaviour
         if (OkButtonCon.outhantei == true)
         {
             transform.localPosition = transform.localPosition += new Vector3(-20, 0, 0);
-            OkButtonCon.outhantei = false;
+           
         }
         if (OkButtonCon.losehantei == true)
         {
             transform.localPosition = transform.localPosition += new Vector3(-20, 0, 0);
-            OkButtonCon.losehantei = false;
+            
         }
     }
 }

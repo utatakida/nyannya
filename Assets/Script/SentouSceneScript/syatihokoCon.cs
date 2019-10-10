@@ -45,7 +45,7 @@ public class syatihokoCon : MonoBehaviour
 
 
         //しゃちほこの体力を表示
-        syatihokotairyoku.GetComponent<TextMeshProUGUI>().text = syatihoko + "/" + "5000";
+        syatihokotairyoku.GetComponent<TextMeshProUGUI>().text = syatihoko + "/" + "10000";
 
 
     }

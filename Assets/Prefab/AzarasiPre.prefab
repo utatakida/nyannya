@@ -101,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9075657, y: 0.046922684}
+  m_Offset: {x: 0.5378401, y: 0.046922684}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.6677313, y: 6.067625}
+  m_Size: {x: 4.9282794, y: 6.067625}
   m_EdgeRadius: 0
 --- !u!1 &6213643479491160158
 GameObject:
@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   azarasi: 1000
-  atari: 0
   tensiPre: {fileID: 8090779640482631298, guid: 5756af78d9b4c84418c14361d3197aca,
     type: 3}
   kemuri: {fileID: 736638389324473101, guid: b55018f3c1f1fea4884207f0f460b441, type: 3}

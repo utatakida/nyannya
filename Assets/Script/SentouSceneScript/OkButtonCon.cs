@@ -15,6 +15,8 @@ public class OkButtonCon : MonoBehaviour
         SceneManager.LoadScene("nekokitiScene");//カッコ内のシーンに移動
         syatihokoCon.win = 0;
         nyankojyouCon.Lose =0;
+        losehantei = false;
+        outhantei = false;
     }
     public static  bool outhantei=false;
     public static bool losehantei = false;

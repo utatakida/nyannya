@@ -12,8 +12,10 @@ public class azarasiGene : MonoBehaviour
     int randamu;
     float syousuu = 0;
 
-    //アザラシの出撃時間を決める
-    float syutugekijikan = 5f;
+    
+
+    //アザラシの出撃可能をbool型で作成
+    float syutugekijikan = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +26,28 @@ public class azarasiGene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int a = GameObject.Find("syatihoko").GetComponent<syatihokoCon>().syatihoko;
 
+        if (a == 10000)
+        {
+            syutugekijikan = 12;
+        }
+        else if (a < 10000 && 5000 < a)
+        {
+            syutugekijikan = 10;
+        }
+        else if (a < 5000 && 2000 < a)
+        {
+            syutugekijikan = 15;
+        }
+        else
+        {
+            syutugekijikan = 3;
+        }
 
         jikan += Time.deltaTime;
         //アザラシの出陣コード
-        if (jikan > 10f && syatihokoCon.win == false)
+        if (jikan > syutugekijikan && syatihokoCon.win <1)
         {
             //アザラシの位置とレイヤーを合わせる
             randamu = Random.Range(1, 5);
