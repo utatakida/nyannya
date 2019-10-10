@@ -36,9 +36,13 @@ public class PauseCon : MonoBehaviour
     //いいえボタン
     private GameObject noButton;
 
+    IEnumerator Ridatu()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("nekokitiScene");//カッコ内のシーンに移動
+    }
 
 
-    
 
     //中断ボタンを押したときの処理
     public void OnClick()
@@ -88,7 +92,7 @@ public class PauseCon : MonoBehaviour
     public void OnClick4()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("nekokitiScene");//カッコ内のシーンに移動
+        StartCoroutine("Ridatu");
 
     }
 

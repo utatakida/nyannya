@@ -2,32 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMCon : MonoBehaviour
+public class OuthuledoCon : MonoBehaviour
 {
-
-
-    public AudioClip BGM;
-    public AudioClip Win;
-
-    public AudioSource audios;
+   
     // Start is called before the first frame update
     void Start()
     {
-        audios.Play();
       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(syatihokoCon.win ==true)
+
+        if (nyankojyouCon.Lose == 1)
         {
-            audios.Stop();
-            audios.PlayOneShot(Win);
 
          
+           
+
+
         }
-
-
     }
 }
